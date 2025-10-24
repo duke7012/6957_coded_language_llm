@@ -1,0 +1,69 @@
+# DoRA Configuration for Masked Language Modeling
+
+# Model settings
+model:
+  name: "meta-llama/Llama-2-7b-hf"  # Change to your preferred LLaMA model
+  use_8bit: false  # Set to true for 8-bit quantization
+  use_4bit: false  # Set to true for 4-bit quantization (QDoRA)
+  device_map: "auto"
+  trust_remote_code: true
+
+# DoRA/LoRA settings
+dora:
+  use_dora: true
+  r: 16  # Rank - can start with half of typical LoRA rank
+  lora_alpha: 32  # Usually 2x the rank
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Dataset settings
+dataset:
+  dataset_name_1: "MLBtrio/genz-slang-dataset"  # First HuggingFace dataset
+  dataset_config_1: null
+  dataset_name_2: "Pbeau/criminal-code-expert-multiple"  # Second HuggingFace dataset
+  dataset_config_2: null
+  split_train: "train"
+  split_validation: "validation"
+  test_size: 0.15  # Percentage of data to hold out for testing (if validation split doesn't exist)
+  max_length: 512
+  mlm_probability: 0.15  # Percentage of tokens to mask
+  preprocessing_num_workers: 4
+  text_column: "auto"  # Auto-detect text column, or specify column name
+
+# Training settings
+training:
+  output_dir: "./checkpoints"
+  num_train_epochs: 3
+  per_device_train_batch_size: 4
+  per_device_eval_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 0.0001  # Slightly lower than typical LoRA (1-2e-4)
+  weight_decay: 0.01
+  warmup_steps: 500
+  logging_steps: 50
+  eval_steps: 500
+  save_steps: 1000
+  save_total_limit: 3
+  fp16: true
+  bf16: false  # Set to true if your GPU supports it
+  optim: "adamw_torch"
+  lr_scheduler_type: "cosine"
+  seed: 42
+  dataloader_num_workers: 4
+  remove_unused_columns: false
+  report_to: ["tensorboard"]  # Can add "wandb" if you want W&B logging
+  
+# Logging
+logging:
+  log_dir: "./logs"
+  run_name: "llama_dora_mlm"
+

@@ -1,0 +1,53 @@
+SAMPLE TRAINING EXAMPLES
+================================================================================
+
+Example 1:
+Input:  Explain 'SMH' in the context of: Used to express disappointment, frustration, or disbelief.  
+Output: Shaking my head
+--------------------------------------------------------------------------------
+
+Example 2:
+Input:  Explain 'DLBBB' in the context of: A playful way to say goodnight, wishing someone peaceful sleep.
+Output: Don’t let the bed bugs bite
+--------------------------------------------------------------------------------
+
+Example 3:
+Input:  What does 'MWAH' mean?
+Output: kiss
+--------------------------------------------------------------------------------
+
+Example 4:
+Input:  Explain 'Stan' in the context of: Refers to being an obsessive or passionate fan, often used in pop culture.  
+Output: a die-hard fan of someone
+--------------------------------------------------------------------------------
+
+Example 5:
+Input:  Translate this GenZ slang to formal English: BFD
+Output: Big freaking deal
+--------------------------------------------------------------------------------
+
+Example 6:
+Input:  Explain 'EOM' in the context of: Indicates the message contains all necessary information, with no further text needed.
+Output: End of message
+--------------------------------------------------------------------------------
+
+Example 7:
+Input:  What does 'GAS' mean?
+Output: Got a second?
+--------------------------------------------------------------------------------
+
+Example 8:
+Input:  Explain 'N2M' in the context of: A casual way to say that not much is happening.  
+Output: Nothing too much
+--------------------------------------------------------------------------------
+
+Example 9:
+Input:  Translate this GenZ slang to formal English: BIF
+Output: Before I forget
+--------------------------------------------------------------------------------
+
+Example 10:
+Input:  Explain 'BFN' in the context of: A temporary goodbye, indicating future communication.
+Output: Bye for now
+--------------------------------------------------------------------------------
+
