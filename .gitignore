@@ -68,4 +68,5 @@ Thumbs.db
 tmp/
 temp/
 
+translation_checkpoints/
 *.safetensors
