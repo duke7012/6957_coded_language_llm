@@ -1,0 +1,252 @@
+Hoping to rebound after their
+to rebound from the loss
+rebound from their halftime to
+from their loss from the
+their loss to the Patriots
+loss to the Patriots the
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: to the Patriots the Raiders
+the Patriots the Cowboys stayed
+Patriots the Raiders played at
+the Raiders stayed at home
+Raiders stayed at home for
+stayed at home until a
+at home for the Week
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: home for a college 16
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: for a Week 7 duel
+a Week 16 tie with
+Week 16 duel between the
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 16 duel with Chicago
+duel with the winning Texans
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: with the Houston Texans Oakland
+the Houston Texans would
+Houston Texans Oakland Raiders get
+Texans Oakland would score the
+Oakland would get a early
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: she would get the game lead
+get the early lead in
+the early lead from the
+early lead in the first
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: lead in the first quarter
+in the first quarter as
+the first quarter quarterback
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: first quarter as quarterback JaMarcus
+quarter as quarterback Matt Ryan threw a 2yard touchdown pass to tight end Greg Olsen and later in the quarter Ryan found Julio Jones in the endzone for a 1yard touchdown pass and later in the quarter Jones made a great catch in traffic for a 16yard touchdown pass and the Falcons led 3514 after the half.
+as quarterback JaMarcus Russell completed
+quarterback JaMarcus Russell led a
+JaMarcus Russell completed a 20yard
+Russell completed a 49yard touchdown
+completed a 20yard touchdown pass
+a 20yard touchdown pass to
+20yard touchdown pass to rookie
+touchdown pass to wide receiver Zehm8faMK6RBH/FABfuBJeHF7U5q+sOTTW0sOll7cYw= in the fourth quarter
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: pass to rookie rookie receiver
+to rookie wide receiver Chaz
+rookie wide receiver Brandon Schilens
+wide receiver Chaz Green The
+receiver Chaz Schilens the Texans
+Chaz Schilens The tight end would
+Schilens The Texans could respond
+The Texans would respond with
+Texans would respond with fullback
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: would respond with Catching Vonta
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word.
+
+Original sentence: fullback Gary Leach
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: with fullback Vonta LeMei getting
+fullback Vonta Leach scored a
+Vonta Leach getting a 1yard
+Leach getting a 14yard touchdown
+getting a 1yard touchdown run
+a 1yard touchdown and yet
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 1yard touchdown run After the
+touchdown run yet New Raiders
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: run yet the game would
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: yet the Raiders scored answer
+the Raiders would score with
+Raiders would answer with kicker
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: would answer with New York
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: answer with kicker Janikowski
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: with kicker Sebastian Janikowski getting
+kicker Sebastian Janikowski kicked a
+Sebastian Janikowski getting a 33yard
+Janikowski getting a safety and
+getting a 33yard touchdown pass and
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 49ers kicked a 33yard and Packers kicked a 30yard
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 33yard and a touchdown field
+and a 35yard field goal
+a 30yard field goal Houston
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 30yard field goal What would
+field goal Houston won tie
+goal Houston would score the
+Houston would tie the game
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: would tie the score in
+tie the game in the
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: the game in the second
+game in the first quarter
+in the second sentence with
+the second quarter Field Goal kicker
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: second quarter with goal-line stands Kris
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: quarter with kicker Nate Brown
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: with kicker Kris Brown getting
+kicker Kris Brown got a
+Kris Brown getting a 53yard
+Brown getting a touchdown and
+getting a 53yard touchdown a
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: The touchdown was 53yard and the field goal was 24yard
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 49yard and a safety field
+and a 36yard field goal
+a 24yard field goal Oakland
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 24yard field goal would
+field goal Oakland won take
+goal Oakland would tie the
+Oakland would take the lead
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: would take the bet in
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: take the lead after the
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: The lead in the third
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: lead in the 11th minute of the first half
+in the third quarter with
+the third quarter tight end tight end wide
+third quarter with wide receiver
+quarter with wide receiver Johnnie
+with wide receiver Steve Johnson The Patriots would respond in the third quarter as LsTQt922PpAz1BXjLFm7cXJT2bDuCBKx2uFmWu5O1VY= Johnson caught a 22yard
+wide receiver Johnnie Johnson Higgins
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: receiver Johnnie Lee catching
+Johnnie Lee Higgins celebrated a
+Lee Higgins catching a 29yard
+Higgins catching a 15-yard touchdown
+catching a 29yard touchdown pass
+a 29yard touchdown pass from
+29yard touchdown pass to Russell
+touchdown pass from Brett Favre followed
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: pass out
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: from Russell followed by who
+Russell followed up with an
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: followed up by a 80yard
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: up by an long punt
+by an 80yard touchdown return
+an 80yard touchdown pass and for
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 80yard touchdown pass from quarterback Philip Rivers to wide receiver Vincent Jackson The Chargers led 140 at halftime 70yard TD pass and a 39yard field goal 70yard TD pass and a 39yard field goal respectively.
+punt return for a touchdown
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: return for a win The
+for a touchdown The Texans
+a touchdown The quarterback tried
+touchdown The Texans scored to
+The Texans tried to rally
+Texans tried to negotiate in
+tried to rally but the
+to rally in the fourth
+rally in the second quarter
+in the fourth quarter as
+the fourth quarter Brown
+fourth quarter as Jones nailed
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: quarter as Brown got a
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: as Brown nailed a 40yard
+Brown nailed a game winning field
+nailed a 40yard field goal
+a 40yard field goal yet
+40yard field goal and the
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: field goal yet the Raiders
+goal yet the offense defense
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: The Raiders would
+the Raiders defense quickly shut
+Raiders defense would shut down
+defense would shut out any
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: he knew he would shut down the village possible
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: shut down any attempt
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: down any possible score
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: possible possible possible possible possible possible
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: possible attempt to searching
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: attempt Still go for
+Still searching for their
+Still searching for the first
+searching for their next win
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: for their first season the
+their first win against the Bengals
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: first win the team flew
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: win the Bengals decided to
+the Bengals flew to Texas
+Bengals flew to Ford Stadium
+flew to Texas for
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: to Texas Stadium on a
+Texas Stadium for the Week
+Stadium for a game 5
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: for a Week Three interconference
+a Week 5 intraconference duel
+Week 5 interconference duel with
+5 interconference duel between the
+interconference duel with the Dallas
+duel with the Green Bay Packers
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: with the Dallas Cowboys in
+the New England Patriots scored first as Tom Brady completed a 40yard pass to WR Randy Moss
+Dallas Cowboys In the first
+Cowboys In the second quarter
+In the first quarter Cincinnati
+the first quarter the jets trailed
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: first quarter Cincinnati scored early
+quarter Cincinnati trailed in as
+Cincinnati trailed early as Cowboys
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: trailed early as kicker
+early as Cowboys quarterback Nick
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: as Cowboys kicker Nick Folk
+Cowboys kicker Nick Folk got
+kicker Nick Folk got a
+Nick Folk got a 30yard
+Folk got a touchdown field
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: He got a 30yard field goal
+a 30yard field goal along
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 30yard field goal How iqYWXOiCJdt3CryedSAbdGuqugYDy5Wd+0Ve4GL4jdk=
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: field goal along with RB
+goal along with Brady Felix
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: along with RB LeSean Johnson
+with RB Leon Washington getting
+RB Felix Jones returned a
+Felix Jones getting a 33yard
+Jones getting a 14 yard TD
+getting a 33yard touchdown run
+a 33yard TD pass In
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 40yard TD pass Then
+TD pass In the second
+run In the second quarter
+In the second quarter Dallas
+the second quarter The Patriots increased
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: second quarter Dallas scored its
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: quarter Dallas increased their lead
+Dallas increased its lead as
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: increased its lead as QB
+its lead as did Tony
+lead as QB Tony Romo
+as QB Tony Parker completed
+QB Tony Romo threw a
+Tony Romo completed a 4yard
+Romo completed a 14-yard TD
+completed a 4yard touchdown pass
+a 4yard TD pass to
+4yard TD pass to TE
+TD pass to Steve Johnson and the Bills would answer with Davis making a 22yard field goal and Jones hitting on a 30yard field goal In the third quarter the Bills would score again with Johnson getting a 1yard TD pass and a subsequent extra point The Jets would answer with Jones getting a 49yard field goal and a subsequent extra point The Bills would score again with Johnson getting a 1yard TD pass and a subsequent extra point The Jets would respond with Jones getting a 33yard field goal and a subsequent extra point The Bills would score again with Johnson getting a 1yard TD pass and a subsequen
+pass to TE Kellen Winslow and later in the game pass to TE Kellen Winslow and later in the game pass to TE Knivez/Witten
+to TE Jason White The
+TE Jason Witten caught the Bengals
+Jason Witten The star would
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: Witten The Bengals won end
+The Bengals would score the
+Bengals would end the half
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: would end the game with
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: end the half as kicker
+the half with Shayne
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: half with kicker Graham
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: with kicker Shayne Graedway getting
+kicker Shayne Graham kicked a
+Shayne Graham getting a 41yard
+Graham getting a penalty and
+getting a 41yard touchdown a
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 41yard and 31yard
+41yard and a touchdown field
+and a 31yard field goal
+a 31yard field goal In
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: 31yard field goal and the
+field goal In the third
+goal In the first quarter
+In the third quarter the Cincinnati
+the third quarter the team tried
+third quarter Cincinnati got to
+You are a helpful assistant for predicting masked words based on context. Please return the sentence with your prediction replacing the masked word, and do not include any extra text: quarter Cincinnati tried to rally

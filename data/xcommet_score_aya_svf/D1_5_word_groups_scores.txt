@@ -1,0 +1,1 @@
+model output score for D1_5_word_groups: 0.925981397151947
