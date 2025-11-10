@@ -1,0 +1,3 @@
+Mean MoverScore for D4_5_word_groups: 0.7730
+Max MoverScore for D4_5_word_groups: 1.0000
+Min MoverScore for D4_5_word_groups: 0.6598
