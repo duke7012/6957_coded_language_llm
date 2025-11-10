@@ -64,7 +64,7 @@ if __name__ == '__main__':
     for pred_f in pred_dir:
         gold_f = pred_f
 
-        with open(gold_dir_str + gold_f, 'r') as file:
+        with open(gold_dir_str + gold_f, 'r', encoding='utf-8', errors='replace') as file:
             gold_lines = file.readlines()
             gold_lines = [line.rstrip('\n') for line in gold_lines]
             gold_lines = [re.sub(r"<pad>", "", line) for line in gold_lines]
@@ -72,7 +72,7 @@ if __name__ == '__main__':
             gold_lines = [line.strip() for line in gold_lines]
             gold_lines = [string for string in gold_lines if string]
 
-        with open(pred_dir_str + pred_f, 'r') as file:
+        with open(pred_dir_str + pred_f, 'r', encoding='utf-8', errors='replace') as file:
             pred_lines = file.readlines()
             pred_lines = [line.rstrip('\n') for line in pred_lines]
             pred_lines = [string for string in pred_lines if string]
@@ -90,7 +90,7 @@ if __name__ == '__main__':
         score_txt.append(f"Max MoverScore for {orig_filename}: {score_df['MoverScore'].max():.4f}")
         score_txt.append(f"Min MoverScore for {orig_filename}: {score_df['MoverScore'].min():.4f}")
 
-        with open(filename, "w") as txt_file:
+        with open(filename, "w", encoding="utf-8") as txt_file:
             for line in score_txt:
                 txt_file.write(line + "\n")
-    txt_file.write(line + "\n")
+
