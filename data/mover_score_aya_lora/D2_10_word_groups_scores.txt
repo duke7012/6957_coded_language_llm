@@ -1,0 +1,3 @@
+Mean MoverScore for D2_10_word_groups: 0.6288
+Max MoverScore for D2_10_word_groups: 1.0000
+Min MoverScore for D2_10_word_groups: 0.2423

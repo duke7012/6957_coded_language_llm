@@ -1,0 +1,3 @@
+Mean MoverScore for D3_10_word_groups: 0.6677
+Max MoverScore for D3_10_word_groups: 1.0000
+Min MoverScore for D3_10_word_groups: 0.2518
