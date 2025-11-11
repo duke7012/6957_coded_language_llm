@@ -1,0 +1,1577 @@
+[
+  {
+    "term": "187",
+    "definition": "Penal code for murder in California; to kill someone",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "They tagged 187 on the wall after the hit. That dude tried to 187 me last night."
+  },
+  {
+    "term": "5-0",
+    "definition": "The police",
+    "category": "law_enforcement",
+    "source": "street_gang",
+    "context": "5-0 coming down the block, let's bounce. Watch out for 5-0 around the corner."
+  },
+  {
+    "term": "banger",
+    "definition": "Gang member",
+    "category": "person",
+    "source": "street_gang",
+    "context": "He's a real banger from the east side. Those bangers are deep in that neighborhood."
+  },
+  {
+    "term": "beef",
+    "definition": "Problems; Trouble",
+    "category": "conflict",
+    "source": "street_gang",
+    "context": "We got beef with them cats from uptown. Don't start no beef you can't finish."
+  },
+  {
+    "term": "blast",
+    "definition": "Shoot",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "They tried to blast him at the corner store. I heard shots, somebody got blasted."
+  },
+  {
+    "term": "blood-in, blood-out",
+    "definition": "To gain admission to some gangs you must kill someone, and to resign you must die or you will be killed by fellow members",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "This set is blood-in, blood-out, no walking away. You knew it was blood-in, blood-out when you signed up."
+  },
+  {
+    "term": "bust a cap",
+    "definition": "Shoot someone",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "He threatened to bust a cap in anybody who snitched. They busted a cap at the rival crew."
+  },
+  {
+    "term": "buster",
+    "definition": "Fake gang member; poser",
+    "category": "person",
+    "source": "street_gang",
+    "context": "That dude's a buster, he ain't really about it. Don't trust him, he's just a buster trying to fit in."
+  },
+  {
+    "term": "crib",
+    "definition": "House; home",
+    "category": "location",
+    "source": "street_gang",
+    "context": "Come through to my crib later. We laying low at his crib tonight."
+  },
+  {
+    "term": "dead presidents",
+    "definition": "Money",
+    "category": "money",
+    "source": "street_gang",
+    "context": "I'm just trying to stack dead presidents. He's all about them dead presidents."
+  },
+  {
+    "term": "deuce deuce",
+    "definition": ".22 caliber gun",
+    "category": "weapon",
+    "source": "street_gang",
+    "context": "He keeps a deuce deuce in his waistband. That's just a deuce deuce, nothing major."
+  },
+  {
+    "term": "dime bag",
+    "definition": "$10 worth of drugs (marijuana)",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "I just need a dime bag real quick. He's out here selling dime bags on the corner."
+  },
+  {
+    "term": "dropping dimes",
+    "definition": "Snitch; to tell on someone",
+    "category": "informant",
+    "source": "street_gang",
+    "context": "Word is he's dropping dimes to the cops. Nobody likes a rat who's dropping dimes."
+  },
+  {
+    "term": "dropping the flag",
+    "definition": "Leaving the gang",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "He's thinking about dropping the flag and going straight. They don't let you just drop the flag like that."
+  },
+  {
+    "term": "eight ball",
+    "definition": "1/8-ounce of cocaine",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "I need to re-up on an eight ball. He moved an eight ball in one night."
+  },
+  {
+    "term": "ganja",
+    "definition": "Marijuana",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "Pass that ganja this way. We sitting back smoking ganja all day."
+  },
+  {
+    "term": "gank",
+    "definition": "To steal",
+    "category": "crime",
+    "source": "street_gang",
+    "context": "Somebody ganked my phone at the party. He tried to gank money from the register."
+  },
+  {
+    "term": "heat",
+    "definition": "Law enforcement officer; Gun; Unwanted attention",
+    "category": "law_enforcement",
+    "source": "street_gang",
+    "context": "The heat is watching the spot. I'm packing heat tonight. This plan is bringing too much heat."
+  },
+  {
+    "term": "high roller",
+    "definition": "Drug dealer; usually shot-callers who control the drug trafficking of a gang and retain the bulk of the drug profits",
+    "category": "person",
+    "source": "street_gang",
+    "context": "He's a high roller moving weight across the city. The high rollers don't touch the product themselves."
+  },
+  {
+    "term": "homeboy",
+    "definition": "One of the boys from the neighborhood gang or group; a fellow gang member",
+    "category": "person",
+    "source": "street_gang",
+    "context": "That's my homeboy from way back. All my homeboys got my back."
+  },
+  {
+    "term": "hot box",
+    "definition": "Stolen car",
+    "category": "vehicle",
+    "source": "street_gang",
+    "context": "That's a hot box, ditch it before the cops see. We riding in a hot box tonight."
+  },
+  {
+    "term": "hustler",
+    "definition": "One who makes money by any means necessary",
+    "category": "person",
+    "source": "street_gang",
+    "context": "He's a real hustler, always got something going. These streets are full of hustlers trying to get by."
+  },
+  {
+    "term": "jacked",
+    "definition": "Robbery; Robbed at gunpoint",
+    "category": "crime",
+    "source": "street_gang",
+    "context": "He got jacked for his chain last night. They jacked the store on Fifth Street."
+  },
+  {
+    "term": "joint",
+    "definition": "A prison; the walls; a marijuana cigarette",
+    "category": "location",
+    "source": "street_gang",
+    "context": "He just got out the joint after five years. Pass that joint. My boy doing time in the joint."
+  },
+  {
+    "term": "jumped in",
+    "definition": "Initiation into a gang",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "He got jumped in last week, took a beating. They jumped him in behind the school."
+  },
+  {
+    "term": "kite",
+    "definition": "A letter or note to another inmate, usually slid under the door (from cell to cell) by means of a thin string",
+    "category": "prison",
+    "source": "prison_gang",
+    "context": "Send me a kite when you get to C block. I got a kite from my cellie down the tier."
+  },
+  {
+    "term": "let's ride on someone",
+    "definition": "Seek someone out, usually retaliation",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "Let's ride on them fools tonight. They talking about riding on the east side crew."
+  },
+  {
+    "term": "liquid juice",
+    "definition": "PCP",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "He's tweaking on that liquid juice. Don't mess with liquid juice, that stuff is dangerous."
+  },
+  {
+    "term": "loc",
+    "definition": "Crazy; loco (Crips); Love only Crips",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "What's up loc? That dude is straight loc, no fear."
+  },
+  {
+    "term": "mission",
+    "definition": "Violent act",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "We going on a mission tonight. He just got back from a mission, better lay low."
+  },
+  {
+    "term": "mobbing",
+    "definition": "Gang members in large numbers",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "They came through mobbing deep. We was mobbing through their territory."
+  },
+  {
+    "term": "mule",
+    "definition": "One who smuggles drugs or other contraband into the prison for another inmate",
+    "category": "person",
+    "source": "prison_gang",
+    "context": "His girl is the mule bringing stuff in on visits. They caught the mule at the gate."
+  },
+  {
+    "term": "my nine",
+    "definition": "9 mm gun",
+    "category": "weapon",
+    "source": "street_gang",
+    "context": "I keep my nine on me at all times. He pulled out his nine when they rushed him."
+  },
+  {
+    "term": "on the menu",
+    "definition": "Someone to be seriously beaten or murdered",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "That snitch is on the menu tonight. You keep talking, you'll be on the menu."
+  },
+  {
+    "term": "packing",
+    "definition": "Person has a gun in his possession",
+    "category": "weapon",
+    "source": "street_gang",
+    "context": "You know I'm always packing. He was packing when they searched him."
+  },
+  {
+    "term": "piece",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "street_gang",
+    "context": "Make sure you bring your piece. He pulled out his piece during the argument."
+  },
+  {
+    "term": "piru",
+    "definition": "Street on which the Bloods originated; Nickname for the Bloods",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "He's Piru through and through. The Pirus run that neighborhood."
+  },
+  {
+    "term": "popped",
+    "definition": "Arrested",
+    "category": "law_enforcement",
+    "source": "street_gang",
+    "context": "My cousin got popped last night. They popped him for possession."
+  },
+  {
+    "term": "put in work",
+    "definition": "Do a shooting; performing gang duties",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "He's been putting in work for the set. You gotta put in work to earn respect."
+  },
+  {
+    "term": "ride on somebody",
+    "definition": "To seek someone out as a target of some violent act",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "We about to ride on them tonight. They rode on us last week, now it's our turn."
+  },
+  {
+    "term": "rock",
+    "definition": "Crystallized cocaine; rock cocaine",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "He's smoking rock all day. Got any rock for sale?"
+  },
+  {
+    "term": "set",
+    "definition": "Gang neighborhood; a member refers to his gang as a set of a larger nation of gangs",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "What set you claiming? I rep my set till I die."
+  },
+  {
+    "term": "sherm",
+    "definition": "Marijuana dipped in embalming fluid",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "He's on that sherm, acting crazy. Don't smoke sherm, that stuff will mess you up."
+  },
+  {
+    "term": "shotcaller",
+    "definition": "Person in charge",
+    "category": "person",
+    "source": "street_gang",
+    "context": "He's the shotcaller for this block. The shotcaller gives all the orders."
+  },
+  {
+    "term": "slanging",
+    "definition": "Selling cocaine (drugs) on the street",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "He's out here slanging to make rent. They been slanging on that corner for years."
+  },
+  {
+    "term": "slobs",
+    "definition": "Disrespectful way of addressing a Bloods member",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "Crips call Bloods 'slobs' as disrespect. They threw up signs dissing the slobs."
+  },
+  {
+    "term": "snitch",
+    "definition": "An informer; fink; rat; stool pigeon",
+    "category": "informant",
+    "source": "street_gang",
+    "context": "He's a snitch working with the cops. Snitches get stitches around here."
+  },
+  {
+    "term": "speed ball",
+    "definition": "Combination of heroin and cocaine",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "He OD'd on a speed ball. Speed balls are deadly, man."
+  },
+  {
+    "term": "stacking",
+    "definition": "Display of hand signals, communication between gang members",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "They was stacking when I walked by. He threw up his set, stacking to let them know."
+  },
+  {
+    "term": "strapped",
+    "definition": "Armed with a gun",
+    "category": "weapon",
+    "source": "street_gang",
+    "context": "Stay strapped or get clapped. We all strapped tonight, just in case."
+  },
+  {
+    "term": "throw down",
+    "definition": "Fight",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "Let's throw down right now. They threw down in the parking lot."
+  },
+  {
+    "term": "tool",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "street_gang",
+    "context": "Keep that tool on you. He reached for his tool when they approached."
+  },
+  {
+    "term": "violation",
+    "definition": "To break a gang rule and receive a punishment",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "That's a violation, he gonna get checked. He caught a violation for talking to the cops."
+  },
+  {
+    "term": "wacked",
+    "definition": "Kill",
+    "category": "violence",
+    "source": "street_gang",
+    "context": "They wacked him last Tuesday. Word is the snitch got wacked."
+  },
+  {
+    "term": "where you from",
+    "definition": "Are you a member of a gang?",
+    "category": "gang_culture",
+    "source": "street_gang",
+    "context": "He rolled up asking 'where you from?' When someone asks where you from, they checking if you gang affiliated."
+  },
+  {
+    "term": "yayo",
+    "definition": "Cocaine",
+    "category": "drugs",
+    "source": "street_gang",
+    "context": "He moving that yayo cross town. Got some good yayo if you need it."
+  },
+  {
+    "term": "ameche",
+    "definition": "Telephone",
+    "category": "object",
+    "source": "gangster_classic",
+    "context": "Get on the ameche and call him. The ameche's been ringing all morning."
+  },
+  {
+    "term": "bean-shooter",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "He pulled out his bean-shooter. Better bring your bean-shooter to this job."
+  },
+  {
+    "term": "big house",
+    "definition": "Jail",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "He did ten years in the big house. They sent him to the big house for armed robbery."
+  },
+  {
+    "term": "bindle",
+    "definition": "Little folded-up piece of paper of heroin; The bundle in which a hobo carries all his worldly possessions",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "He bought a bindle on the corner. The hobo carried his bindle over his shoulder."
+  },
+  {
+    "term": "blow one down",
+    "definition": "Kill someone",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "The boss wants us to blow that guy down. They blew down three cops in the shootout."
+  },
+  {
+    "term": "boiler",
+    "definition": "Car",
+    "category": "vehicle",
+    "source": "gangster_classic",
+    "context": "Get in the boiler, we gotta scram. His boiler's parked around the corner."
+  },
+  {
+    "term": "bop",
+    "definition": "To kill",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "The contract is to bop the DA. They bopped him last night in the alley."
+  },
+  {
+    "term": "bracelets",
+    "definition": "Handcuffs",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "The cops slapped the bracelets on him. He was wearing bracelets when they dragged him out."
+  },
+  {
+    "term": "bulls",
+    "definition": "Cops (perhaps plainclothes detectives)",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "The bulls are tailing us. Watch out for bulls in the area."
+  },
+  {
+    "term": "bump",
+    "definition": "Kill",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "The boss ordered a bump on the informant. They bumped him off quietly."
+  },
+  {
+    "term": "burn powder",
+    "definition": "Fire a gun",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "Things got hot and we had to burn powder. They burned powder all night in that shootout."
+  },
+  {
+    "term": "butter and egg man",
+    "definition": "The money man, the man with the bankroll, a yokel who comes to town to blow a big wad in nightclubs",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "Here comes the butter and egg man ready to spend. We need a butter and egg man to finance this operation."
+  },
+  {
+    "term": "cabbage",
+    "definition": "Money",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "How much cabbage you got on you? This job will bring in serious cabbage."
+  },
+  {
+    "term": "caboose",
+    "definition": "Jail",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "He spent the night in the caboose. They're gonna throw you in the caboose."
+  },
+  {
+    "term": "can",
+    "definition": "Jail",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "He's been in the can for two months. Better watch out or you'll end up in the can."
+  },
+  {
+    "term": "chicago overcoat",
+    "definition": "A coffin",
+    "category": "death",
+    "source": "gangster_classic",
+    "context": "Keep talking and you'll end up in a Chicago overcoat. They fitted him for a Chicago overcoat."
+  },
+  {
+    "term": "chilled off",
+    "definition": "Killed",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "The witness got chilled off before trial. He was chilled off in his own apartment."
+  },
+  {
+    "term": "chisel",
+    "definition": "To swindle or cheat",
+    "category": "crime",
+    "source": "gangster_classic",
+    "context": "He tried to chisel me on the deal. Don't let him chisel you out of your cut."
+  },
+  {
+    "term": "chiv",
+    "definition": "Knife, or other stabbing or cutting weapon",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "He pulled a chiv during the fight. Better carry a chiv for protection."
+  },
+  {
+    "term": "chopper squad",
+    "definition": "Guys with machine guns",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "Send in the chopper squad. The chopper squad took care of the competition."
+  },
+  {
+    "term": "clip joint",
+    "definition": "A night-club where the prices are high and the patrons are fleeced; A casino where the tables are fixed",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "That place is a clip joint, don't go there. We ran a clip joint downtown for years."
+  },
+  {
+    "term": "cooler",
+    "definition": "Jail",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "They threw him in the cooler overnight. He's cooling off in the cooler."
+  },
+  {
+    "term": "copper",
+    "definition": "Policeman",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "The coppers are on our tail. Don't trust that copper, he's crooked."
+  },
+  {
+    "term": "croak",
+    "definition": "To kill",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "The mob wants to croak him. He got croaked in a drive-by."
+  },
+  {
+    "term": "croaker",
+    "definition": "Doctor",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "Get the croaker, he's been shot. We need a croaker who doesn't ask questions."
+  },
+  {
+    "term": "crushed out",
+    "definition": "Escaped (from jail)",
+    "category": "prison",
+    "source": "gangster_classic",
+    "context": "Three cons crushed out last night. He crushed out through the laundry room."
+  },
+  {
+    "term": "dick",
+    "definition": "Detective (usually qualified with 'private' if not a policeman)",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "Some dick has been following me. I hired a private dick to tail my wife."
+  },
+  {
+    "term": "dip",
+    "definition": "Pickpocket",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "There's a dip working the subway. He's the best dip in the city."
+  },
+  {
+    "term": "dope",
+    "definition": "Drugs, of any sort; Information",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "He's dealing dope on the corner. Give me the dope on the new guy. What's the dope on this job?"
+  },
+  {
+    "term": "dope fiend",
+    "definition": "Drug addict",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "He's turned into a dope fiend. Don't trust a dope fiend with your money."
+  },
+  {
+    "term": "dough",
+    "definition": "Money",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "How much dough we talking? I need to make some dough fast."
+  },
+  {
+    "term": "drill",
+    "definition": "Shoot",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "They drilled him full of holes. I'm gonna drill anyone who crosses me."
+  },
+  {
+    "term": "droppers",
+    "definition": "Hired killers",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "The boss sent his best droppers. We need some droppers for this job."
+  },
+  {
+    "term": "drum",
+    "definition": "Speakeasy",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "Meet me at the drum on Fifth. We're hiding out in a drum uptown."
+  },
+  {
+    "term": "dry-gulch",
+    "definition": "Knock out, hit on head after ambushing",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "They dry-gulched him in the alley. We'll dry-gulch him when he comes out."
+  },
+  {
+    "term": "fin",
+    "definition": "$5 bill",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "Lend me a fin until Friday. It'll cost you a fin to get in."
+  },
+  {
+    "term": "finger",
+    "definition": "Identify",
+    "category": "informant",
+    "source": "gangster_classic",
+    "context": "He fingered the guy who robbed him. Don't finger me or you're dead."
+  },
+  {
+    "term": "flivver",
+    "definition": "A Ford automobile",
+    "category": "vehicle",
+    "source": "gangster_classic",
+    "context": "We took the getaway in an old flivver. His flivver broke down on the highway."
+  },
+  {
+    "term": "fog",
+    "definition": "To shoot",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "I'll fog anyone who gets in my way. They fogged the place up good."
+  },
+  {
+    "term": "gat",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "Keep your gat handy. He pulled out his gat when the shooting started."
+  },
+  {
+    "term": "geetus",
+    "definition": "Money",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "We need more geetus for this operation. Hand over the geetus."
+  },
+  {
+    "term": "giggle juice",
+    "definition": "Liquor",
+    "category": "alcohol",
+    "source": "gangster_classic",
+    "context": "Pour me some of that giggle juice. We got plenty of giggle juice for the party."
+  },
+  {
+    "term": "gin mill",
+    "definition": "Bar (speakeasy)",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "He owns three gin mills in Brooklyn. Let's hit the gin mill for a drink."
+  },
+  {
+    "term": "glaum",
+    "definition": "Steal",
+    "category": "crime",
+    "source": "gangster_classic",
+    "context": "Somebody glaumed my wallet. He glaumed the diamonds from the safe."
+  },
+  {
+    "term": "gonif",
+    "definition": "Thief (Yiddish)",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "That gonif stole my watch. He's a two-bit gonif, nothing more."
+  },
+  {
+    "term": "goon",
+    "definition": "Thug",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "Send some goons to shake him down. His goons will rough you up."
+  },
+  {
+    "term": "gowed-up",
+    "definition": "On dope, high",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "He's all gowed-up on opium. They were gowed-up during the heist."
+  },
+  {
+    "term": "grand",
+    "definition": "$1000",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "The job pays five grand. I lost two grand at the track."
+  },
+  {
+    "term": "grifter",
+    "definition": "Con man",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "He's a grifter running cons downtown. Don't trust that grifter."
+  },
+  {
+    "term": "gum-shoe",
+    "definition": "Detective, also gumshoeing = detective work",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "Some gum-shoe has been asking questions. He's doing gum-shoe work for the DA."
+  },
+  {
+    "term": "hack",
+    "definition": "Taxi",
+    "category": "vehicle",
+    "source": "gangster_classic",
+    "context": "Grab a hack and meet me there. We took a hack to the hideout."
+  },
+  {
+    "term": "hash house",
+    "definition": "A cheap restaurant",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "Let's grab a bite at the hash house. He works at a hash house on Broadway."
+  },
+  {
+    "term": "hatchetmen",
+    "definition": "Killers, gunmen",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "The boss sent his hatchetmen. Watch out for the Chinese hatchetmen."
+  },
+  {
+    "term": "heater",
+    "definition": "A gun",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "Better pack a heater on this job. He's carrying a heater in his coat."
+  },
+  {
+    "term": "hooch",
+    "definition": "Liquor; An alcoholic beverage made by fermenting a sugary syrup or liquid and bread",
+    "category": "alcohol",
+    "source": "gangster_classic",
+    "context": "Pass me that hooch. They're brewing hooch in the cell."
+  },
+  {
+    "term": "hoosegow",
+    "definition": "Jail",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "He's been in the hoosegow twice this year. They'll throw you in the hoosegow."
+  },
+  {
+    "term": "hop",
+    "definition": "Drugs, mostly morphine or derivatives like heroin",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "He's addicted to hop. You can get hop from the Chinese quarter."
+  },
+  {
+    "term": "hop-head",
+    "definition": "Drug addict, esp. heroin",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "He's nothing but a hop-head now. Don't deal with hop-heads, they're unreliable."
+  },
+  {
+    "term": "horn",
+    "definition": "Telephone",
+    "category": "object",
+    "source": "gangster_classic",
+    "context": "Get on the horn and call him. The horn's been ringing off the hook."
+  },
+  {
+    "term": "ice",
+    "definition": "Diamonds",
+    "category": "valuables",
+    "source": "gangster_classic",
+    "context": "She's wearing some serious ice. We lifted the ice from the jewelry store."
+  },
+  {
+    "term": "in stir",
+    "definition": "In jail",
+    "category": "prison",
+    "source": "gangster_classic",
+    "context": "He's been in stir for five years. My brother's in stir upstate."
+  },
+  {
+    "term": "iron",
+    "definition": "A car",
+    "category": "vehicle",
+    "source": "gangster_classic",
+    "context": "Nice iron you got there. We need fresh iron for the job."
+  },
+  {
+    "term": "java",
+    "definition": "Coffee",
+    "category": "food_drink",
+    "source": "gangster_classic",
+    "context": "Pour me a cup of java. Let's grab some java at the diner."
+  },
+  {
+    "term": "juice",
+    "definition": "Interest on a loanshark's loan",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "You owe me the juice on that loan. The juice is 10% per week."
+  },
+  {
+    "term": "keister",
+    "definition": "Suitcase; also means buttocks or safe/strongbox",
+    "category": "object",
+    "source": "gangster_classic",
+    "context": "Grab the keister and let's go. They cracked the keister in ten minutes."
+  },
+  {
+    "term": "knock off",
+    "definition": "Kill",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "The boss wants us to knock him off. They knocked off three guards during the heist."
+  },
+  {
+    "term": "lammed off",
+    "definition": "Ran away, escaped",
+    "category": "escape",
+    "source": "gangster_classic",
+    "context": "He lammed off before the cops arrived. They lammed off to Mexico."
+  },
+  {
+    "term": "loogan",
+    "definition": "A guy with a gun",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "Watch out, he's a loogan. The boss sent three loogans to handle it."
+  },
+  {
+    "term": "mazuma",
+    "definition": "Money",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "How much mazuma you need? This job will bring in plenty of mazuma."
+  },
+  {
+    "term": "meat wagon",
+    "definition": "Ambulance",
+    "category": "vehicle",
+    "source": "gangster_classic",
+    "context": "Call the meat wagon, he's bleeding out. The meat wagon took three bodies away."
+  },
+  {
+    "term": "mickey finn",
+    "definition": "Take off, leave; A drink drugged with knock-out drops",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "Let's take a mickey finn out of here. They slipped him a mickey finn at the bar."
+  },
+  {
+    "term": "moll",
+    "definition": "Girlfriend",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "He brought his moll to the meeting. That's the boss's moll, don't look at her."
+  },
+  {
+    "term": "mouthpiece",
+    "definition": "Lawyer",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "Get me my mouthpiece. His mouthpiece got him off on a technicality."
+  },
+  {
+    "term": "nippers",
+    "definition": "Handcuffs",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "They put the nippers on him. He slipped out of the nippers somehow."
+  },
+  {
+    "term": "nose-candy",
+    "definition": "Cocaine, Heroin in some cases",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "He's been snorting nose-candy all night. You got any nose-candy?"
+  },
+  {
+    "term": "op",
+    "definition": "Detective (esp. private), from 'operative'",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "He's a private op working the case. Some op has been tailing me."
+  },
+  {
+    "term": "peeper",
+    "definition": "Detective",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "There's a peeper asking questions about you. Hire a peeper to find out who did it."
+  },
+  {
+    "term": "pen",
+    "definition": "Jail, penitentiary",
+    "category": "location",
+    "source": "gangster_classic",
+    "context": "He's doing ten years in the pen. They sent him to the state pen."
+  },
+  {
+    "term": "peterman",
+    "definition": "Safecracker who uses nitroglycerin",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "We need a good peterman for this job. The peterman blew the safe clean off."
+  },
+  {
+    "term": "pill",
+    "definition": "Bullet; Cigarette",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "He caught a pill in the chest. Pass me a pill, will ya?"
+  },
+  {
+    "term": "pinch",
+    "definition": "An arrest, capture",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "He took a pinch last night. They made the pinch at dawn."
+  },
+  {
+    "term": "pump metal",
+    "definition": "Shoot bullets",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "They started pumping metal everywhere. Time to pump some metal."
+  },
+  {
+    "term": "queer",
+    "definition": "Counterfeit; Sexually abnormal",
+    "category": "crime",
+    "source": "gangster_classic",
+    "context": "These bills are queer. He's passing queer money downtown."
+  },
+  {
+    "term": "rap",
+    "definition": "Criminal charge; Information; Hit",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "He's beating the murder rap. What's the rap on this guy? I took the rap for him."
+  },
+  {
+    "term": "rat",
+    "definition": "Inform",
+    "category": "informant",
+    "source": "gangster_classic",
+    "context": "He ratted to the cops. Don't rat or you're dead."
+  },
+  {
+    "term": "rattler",
+    "definition": "Train",
+    "category": "vehicle",
+    "source": "gangster_classic",
+    "context": "We're hopping the rattler to Chicago. They robbed the rattler last night."
+  },
+  {
+    "term": "reefers",
+    "definition": "Marijuana cigarettes",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "He's smoking reefers in the back. Got any reefers on you?"
+  },
+  {
+    "term": "rhino",
+    "definition": "Money",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "I need some rhino fast. This job will bring in plenty of rhino."
+  },
+  {
+    "term": "rod",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "Keep your rod ready. He pulled his rod on me."
+  },
+  {
+    "term": "roscoe",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "Better bring your roscoe. He's packing a roscoe under his coat."
+  },
+  {
+    "term": "rub-out",
+    "definition": "A death",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "It's gonna be a rub-out. The newspapers called it a gangland rub-out."
+  },
+  {
+    "term": "sap",
+    "definition": "A dumb guy; A blackjack",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "What a sap, he fell for it. He got sapped from behind."
+  },
+  {
+    "term": "sawbuck",
+    "definition": "$10",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "Lend me a sawbuck. It'll cost you a sawbuck to get in."
+  },
+  {
+    "term": "scratch",
+    "definition": "Money",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "You got any scratch on you? We need to raise some scratch."
+  },
+  {
+    "term": "scratcher",
+    "definition": "Forger",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "He's the best scratcher in town. We need a scratcher for these documents."
+  },
+  {
+    "term": "screw",
+    "definition": "Leave; Prison guard",
+    "category": "prison",
+    "source": "gangster_classic",
+    "context": "Let's screw before the cops come. The screw is making his rounds."
+  },
+  {
+    "term": "shamus",
+    "definition": "(Private) detective",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "Some shamus has been following me. Hire a shamus to tail him."
+  },
+  {
+    "term": "shiv",
+    "definition": "Knife",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "He pulled a shiv on me. Better carry a shiv for protection."
+  },
+  {
+    "term": "shylock",
+    "definition": "Loanshark",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "I owe the shylock ten grand. Don't borrow from a shylock, the juice will kill you."
+  },
+  {
+    "term": "sleuth",
+    "definition": "Detective",
+    "category": "law_enforcement",
+    "source": "gangster_classic",
+    "context": "There's a sleuth nosing around. The sleuth tracked them down."
+  },
+  {
+    "term": "slug",
+    "definition": "Bullet; to knock unconscious",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "He took three slugs to the chest. They slugged the guard and took his keys."
+  },
+  {
+    "term": "snatch",
+    "definition": "Kidnap",
+    "category": "crime",
+    "source": "gangster_classic",
+    "context": "They snatched the kid for ransom. It's a snatch job, pay up or else."
+  },
+  {
+    "term": "snow-bird",
+    "definition": "(Cocaine) addict",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "He's turned into a snow-bird. Don't trust a snow-bird with anything."
+  },
+  {
+    "term": "soup job",
+    "definition": "To crack a safe using nitroglycerine",
+    "category": "crime",
+    "source": "gangster_classic",
+    "context": "It's gonna be a soup job. They did a soup job on the bank vault."
+  },
+  {
+    "term": "squirt metal",
+    "definition": "Shoot bullets",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "They started squirting metal at us. Time to squirt some metal."
+  },
+  {
+    "term": "step off",
+    "definition": "To be hanged",
+    "category": "death",
+    "source": "gangster_classic",
+    "context": "He's gonna step off at dawn. They made him step off for the murders."
+  },
+  {
+    "term": "stiff",
+    "definition": "A corpse",
+    "category": "death",
+    "source": "gangster_classic",
+    "context": "There's a stiff in the alley. They found three stiffs in the warehouse."
+  },
+  {
+    "term": "stool-pigeon",
+    "definition": "Informer",
+    "category": "informant",
+    "source": "gangster_classic",
+    "context": "He's a stool-pigeon for the cops. Watch out for stool-pigeons."
+  },
+  {
+    "term": "take a powder",
+    "definition": "Leave",
+    "category": "escape",
+    "source": "gangster_classic",
+    "context": "Let's take a powder before trouble starts. He took a powder when the shooting began."
+  },
+  {
+    "term": "tea",
+    "definition": "Marijuana",
+    "category": "drugs",
+    "source": "gangster_classic",
+    "context": "They're smoking tea in the back room. Got any tea on you?"
+  },
+  {
+    "term": "throw lead",
+    "definition": "Shoot bullets",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "They started throwing lead at us. Time to throw some lead."
+  },
+  {
+    "term": "torpedoes",
+    "definition": "Gunmen",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "The boss sent his torpedoes. Watch out for torpedoes in the area."
+  },
+  {
+    "term": "trigger man",
+    "definition": "Guy who does the shooting on a job",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "He's the trigger man for the mob. We need a good trigger man for this hit."
+  },
+  {
+    "term": "vig",
+    "definition": "Interest on a loanshark's loan",
+    "category": "money",
+    "source": "gangster_classic",
+    "context": "The vig is killing me. Pay the vig or they'll break your legs."
+  },
+  {
+    "term": "wear iron",
+    "definition": "Carry a gun",
+    "category": "weapon",
+    "source": "gangster_classic",
+    "context": "Make sure you wear iron on this job. He's wearing iron under his coat."
+  },
+  {
+    "term": "wooden kimono",
+    "definition": "A coffin",
+    "category": "death",
+    "source": "gangster_classic",
+    "context": "Keep talking and you'll end up in a wooden kimono. They put him in a wooden kimono."
+  },
+  {
+    "term": "yegg",
+    "definition": "Safecracker, who can only open a rather cheap and vulnerable safe",
+    "category": "person",
+    "source": "gangster_classic",
+    "context": "We need a yegg for this job. He's just a yegg, can't crack the good ones."
+  },
+  {
+    "term": "zotzed",
+    "definition": "Killed",
+    "category": "violence",
+    "source": "gangster_classic",
+    "context": "He got zotzed last night. They zotzed the witness before trial."
+  },
+  {
+    "term": "yard",
+    "definition": "Jamaica, West Indies; $100",
+    "category": "location",
+    "source": "jamaican_posse",
+    "context": "He's straight from yard. This costs three yard."
+  },
+  {
+    "term": "bite",
+    "definition": "Arrest",
+    "category": "law_enforcement",
+    "source": "jamaican_posse",
+    "context": "The beasts gave him a bite last night. Watch out or you'll catch a bite."
+  },
+  {
+    "term": "teeth",
+    "definition": "Bullets",
+    "category": "weapon",
+    "source": "jamaican_posse",
+    "context": "Load up the teeth. He caught some teeth in the shootout."
+  },
+  {
+    "term": "beasts",
+    "definition": "Police",
+    "category": "law_enforcement",
+    "source": "jamaican_posse",
+    "context": "The beasts are coming, scatter. Watch out for the beasts."
+  },
+  {
+    "term": "iric",
+    "definition": "It's okay, its first class, or that is excellent",
+    "category": "expression",
+    "source": "jamaican_posse",
+    "context": "Everything iric, man. That plan is iric."
+  },
+  {
+    "term": "yeung",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "jamaican_posse",
+    "context": "Keep the yeung ready. He pulled out his yeung."
+  },
+  {
+    "term": "gong",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "jamaican_posse",
+    "context": "Pass me the gong. He's carrying a gong under his shirt."
+  },
+  {
+    "term": "shooty",
+    "definition": "Gun",
+    "category": "weapon",
+    "source": "jamaican_posse",
+    "context": "Bring the shooty. He fired the shooty at them."
+  },
+  {
+    "term": "machine",
+    "definition": "Shotgun; Machine gun",
+    "category": "weapon",
+    "source": "jamaican_posse",
+    "context": "They came with the machine. Get the machine from the trunk."
+  },
+  {
+    "term": "rings",
+    "definition": "Guns and bullets",
+    "category": "weapon",
+    "source": "jamaican_posse",
+    "context": "Make sure we got enough rings. They brought plenty of rings to the fight."
+  },
+  {
+    "term": "ily",
+    "definition": "Marijuana",
+    "category": "drugs",
+    "source": "jamaican_posse",
+    "context": "Pass the ily. We smoking ily all night."
+  },
+  {
+    "term": "corn",
+    "definition": "Marijuana",
+    "category": "drugs",
+    "source": "jamaican_posse",
+    "context": "Roll up some corn. Got any corn on you?"
+  },
+  {
+    "term": "food",
+    "definition": "Marijuana",
+    "category": "drugs",
+    "source": "jamaican_posse",
+    "context": "We need some food. He's selling good food."
+  },
+  {
+    "term": "fire",
+    "definition": "Police approaching",
+    "category": "law_enforcement",
+    "source": "jamaican_posse",
+    "context": "Fire! Fire! Let's go. When you hear fire, run."
+  },
+  {
+    "term": "baldheads",
+    "definition": "Straights; undesirable",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "Chase those baldheads out of town. We don't deal with baldheads."
+  },
+  {
+    "term": "babylon",
+    "definition": "The world outside of the Rasta's world, the power structure, the police",
+    "category": "law_enforcement",
+    "source": "jamaican_posse",
+    "context": "Babylon is oppressing us. Fight against Babylon."
+  },
+  {
+    "term": "bloodclot",
+    "definition": "Offensive term",
+    "category": "insult",
+    "source": "jamaican_posse",
+    "context": "You bloodclot! That bloodclot tried to cross me."
+  },
+  {
+    "term": "bumbaclot",
+    "definition": "Offensive term",
+    "category": "insult",
+    "source": "jamaican_posse",
+    "context": "Bumbaclot! Get out of here you bumbaclot."
+  },
+  {
+    "term": "pussyclot",
+    "definition": "Offensive term. Worse than Bloodclot",
+    "category": "insult",
+    "source": "jamaican_posse",
+    "context": "You pussyclot! That pussyclot owes me money."
+  },
+  {
+    "term": "ras",
+    "definition": "Ass",
+    "category": "insult",
+    "source": "jamaican_posse",
+    "context": "You ole rass you. Move your rass."
+  },
+  {
+    "term": "dreadlocks",
+    "definition": "Braids most Rastas wear, sometimes concealed under a hat",
+    "category": "appearance",
+    "source": "jamaican_posse",
+    "context": "His dreadlocks are long. She wears her dreadlocks under a tam."
+  },
+  {
+    "term": "jah",
+    "definition": "God",
+    "category": "religious",
+    "source": "jamaican_posse",
+    "context": "Praise Jah. Jah will protect us."
+  },
+  {
+    "term": "spliff",
+    "definition": "Joint; one ounce of ganja makes approximately four spliffs",
+    "category": "drugs",
+    "source": "jamaican_posse",
+    "context": "Roll up a spliff. Pass the spliff, man."
+  },
+  {
+    "term": "don",
+    "definition": "Boss",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "He's the don of the posse. The don makes all the decisions."
+  },
+  {
+    "term": "rankin",
+    "definition": "High ranking member of the posse",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "He's a rankin in the organization. Only rankins can make that call."
+  },
+  {
+    "term": "drug baron",
+    "definition": "Major drug smuggler",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "He's a drug baron moving tons. The drug barons control everything."
+  },
+  {
+    "term": "johted",
+    "definition": "Dismembered or beheaded",
+    "category": "violence",
+    "source": "jamaican_posse",
+    "context": "They found him johted in the alley. He got johted for snitching."
+  },
+  {
+    "term": "higgler",
+    "definition": "Vendor (Informal Commercial Importation)",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "The higglers bring stuff from yard. She's a higgler at the market."
+  },
+  {
+    "term": "druggler",
+    "definition": "Drug dealer",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "He's a known druggler. The drugglers run the block."
+  },
+  {
+    "term": "licksy licksy",
+    "definition": "A person who has excessive desire",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "That licksy licksy policeman is on the take. He's a licksy licksy thief."
+  },
+  {
+    "term": "mama man",
+    "definition": "Homosexual",
+    "category": "person",
+    "source": "jamaican_posse",
+    "context": "They don't trust mama man. He's a mama man."
+  },
+  {
+    "term": "beemer",
+    "definition": "Crack smoker",
+    "category": "person",
+    "source": "street_drug",
+    "context": "He's a beemer, stays high. Those beemers are desperate."
+  },
+  {
+    "term": "bottles",
+    "definition": "Crack vials",
+    "category": "drugs",
+    "source": "street_drug",
+    "context": "He's selling bottles on the corner. Got five bottles in his pocket."
+  },
+  {
+    "term": "carburetor",
+    "definition": "Crack stem attachment used when stem is broken or too short",
+    "category": "drugs",
+    "source": "street_drug",
+    "context": "Need a carburetor for this stem. The carburetor broke off."
+  },
+  {
+    "term": "carpet patrol",
+    "definition": "Crack smokers searching on the floor for crumbs of crack",
+    "category": "drugs",
+    "source": "street_drug",
+    "context": "He's on carpet patrol again. They on carpet patrol looking for crumbs."
+  },
+  {
+    "term": "cocoa puff",
+    "definition": "Smoking heroin and crack together",
+    "category": "drugs",
+    "source": "street_drug",
+    "context": "He's smoking cocoa puffs. Cocoa puffs will mess you up bad."
+  },
+  {
+    "term": "on a mission",
+    "definition": "Looking for crack, trying to buy crack; high on crack",
+    "category": "drugs",
+    "source": "street_drug",
+    "context": "He's on a mission right now. When she's on a mission, don't bother her."
+  },
+  {
+    "term": "ringer",
+    "definition": "Good hit of crack; users hears bells",
+    "category": "drugs",
+    "source": "street_drug",
+    "context": "That was a ringer. He got a ringer off that hit."
+  },
+  {
+    "term": "stem",
+    "definition": "Cylinder used to smoke crack",
+    "category": "drugs",
+    "source": "street_drug",
+    "context": "Pass me the stem. His stem is burned up."
+  },
+  {
+    "term": "thirst monsters",
+    "definition": "Heavy crack smokers",
+    "category": "person",
+    "source": "street_drug",
+    "context": "Those thirst monsters will do anything for a hit. The thirst monsters are out tonight."
+  },
+  {
+    "term": "24/7",
+    "definition": "24 hours a day, 7 days a week",
+    "category": "expression",
+    "source": "street_drug",
+    "context": "We open 24/7. He's hustling 24/7."
+  },
+  {
+    "term": "barrio",
+    "definition": "Neighborhood; synonymous with gang most of the time",
+    "category": "location",
+    "source": "hispanic_gang",
+    "context": "This is my barrio. Don't come into our barrio."
+  },
+  {
+    "term": "ese",
+    "definition": "Hey! Hey Man!",
+    "category": "expression",
+    "source": "hispanic_gang",
+    "context": "Ese! What's up ese? Yo ese, come here."
+  },
+  {
+    "term": "vato",
+    "definition": "Man/boy; guy",
+    "category": "person",
+    "source": "hispanic_gang",
+    "context": "Hey vato! That vato is crazy. What's up vato?"
+  },
+  {
+    "term": "carnal",
+    "definition": "Brother",
+    "category": "person",
+    "source": "hispanic_gang",
+    "context": "That's my carnal. My carnal got my back."
+  },
+  {
+    "term": "rifa",
+    "definition": "Rule, reign, We Control, We Are The Best",
+    "category": "gang_culture",
+    "source": "hispanic_gang",
+    "context": "Mi barrio rifa! We rifa this neighborhood."
+  },
+  {
+    "term": "trucha",
+    "definition": "Watch Out! Get With It! Look Out!",
+    "category": "warning",
+    "source": "hispanic_gang",
+    "context": "Trucha! The cops are coming. Trucha vato, someone's watching."
+  },
+  {
+    "term": "simon",
+    "definition": "Yes",
+    "category": "expression",
+    "source": "hispanic_gang",
+    "context": "Simon ese. Simon, that's right."
+  },
+  {
+    "term": "orale",
+    "definition": "Okay, stop fooling around; Hey! Okay! Right On!",
+    "category": "expression",
+    "source": "hispanic_gang",
+    "context": "Orale vato! Orale, let's go."
+  },
+  {
+    "term": "mota",
+    "definition": "Marijuana",
+    "category": "drugs",
+    "source": "hispanic_gang",
+    "context": "Pass the mota. He's selling mota."
+  },
+  {
+    "term": "firme",
+    "definition": "Good, straight person, fine",
+    "category": "expression",
+    "source": "hispanic_gang",
+    "context": "That's firme. He's a firme"
+  }
+]
