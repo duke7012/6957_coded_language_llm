@@ -1,0 +1,26 @@
+# -------- Core: CUDA 12.4 PyTorch stack --------
+torch==2.5.1+cu124
+torchvision==0.20.1+cu124
+torchaudio==2.5.1+cu124
+--extra-index-url https://download.pytorch.org/whl/cu124
+
+# -------- HF ecosystem --------
+transformers==4.46.2
+datasets==3.1.0
+accelerate==1.2.1
+tokenizers>=0.19.0
+safetensors>=0.4.2
+
+# -------- Parameter-efficient fine-tuning --------
+peft==0.11.1
+trl==0.11.4
+
+# -------- Quantization / 4-bit --------
+bitsandbytes==0.43.1
+
+# -------- Utilities --------
+sentencepiece==0.2.0
+protobuf==5.28.3
+pandas==2.2.3
+huggingface_hub==0.26.2
+numpy==1.26.4
