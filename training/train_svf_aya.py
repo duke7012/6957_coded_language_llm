@@ -118,10 +118,17 @@ def main():
     # --- Train ---
     trainer.train()
 
-    # --- Save model ---
-    output_dir = training_arguments.output_dir
-    os.makedirs(output_dir, exist_ok=True)
-    trainer.model.save_pretrained(save_directory=output_dir)
+    # Save both adapter and base model safely
+    output_dir = os.path.join(os.getcwd(), f"svf_results_aya8b_translator/4d_results{args.epochs}")
+
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+# ---  Save adapter weights ---
+    model.save_pretrained(output_dir)
+
+    tokenizer.save_pretrained(output_dir)
+
     model.config.use_cache = True
     model.eval()
 
