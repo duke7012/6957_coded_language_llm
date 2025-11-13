@@ -1,9 +1,0 @@
-Mean Precision for D4_10_word_groups: 0.9749
-Max Precision for D4_10_word_groups: 1.0000
-Min Precision for D4_10_word_groups: 0.8503
-Mean Recall for D4_10_word_groups: 0.9647
-Max Recall for D4_10_word_groups: 1.0000
-Min Recall for D4_10_word_groups: 0.8149
-Mean F1 for D4_10_word_groups: 0.9696
-Max F1 for D4_10_word_groups: 1.0000
-Min F1 for D4_10_word_groups: 0.8365
