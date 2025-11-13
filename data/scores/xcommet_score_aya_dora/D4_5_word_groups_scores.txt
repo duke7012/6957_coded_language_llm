@@ -1,0 +1,1 @@
+model output score for D4_5_word_groups: 0.8582031751871109

@@ -1,0 +1,9 @@
+Mean Precision for drop_dev_passage_5_word_groups: 0.8930
+Max Precision for drop_dev_passage_5_word_groups: 1.0000
+Min Precision for drop_dev_passage_5_word_groups: 0.7727
+Mean Recall for drop_dev_passage_5_word_groups: 0.8759
+Max Recall for drop_dev_passage_5_word_groups: 1.0000
+Min Recall for drop_dev_passage_5_word_groups: 0.7042
+Mean F1 for drop_dev_passage_5_word_groups: 0.8840
+Max F1 for drop_dev_passage_5_word_groups: 1.0000
+Min F1 for drop_dev_passage_5_word_groups: 0.7843
