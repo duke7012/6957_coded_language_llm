@@ -1,11 +1,10 @@
 import argparse
 import os
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
-from peft import PeftModel, DoRAConfig, get_peft_model
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments, BitsAndBytesConfig
+from peft import PeftModel, LoraConfig, get_peft_model
 from datasets import load_dataset
 from trl import SFTTrainer
-from transformers import BitsAndBytesConfig
 
 ################ CONFIG ################
 MODEL_BASE = "CohereForAI/aya-expanse-8b"
@@ -37,7 +36,7 @@ model.save_pretrained(MERGED_MODEL_DIR)
 tokenizer.save_pretrained(MERGED_MODEL_DIR)
 
 
-################ STEP 2: DORA TRAINING ################
+################ STEP 2: DORA-LIKE TRAINING ################
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--epochs", type=int, default=3)
@@ -52,7 +51,7 @@ def main():
             bnb_4bit_use_double_quant=True
         )
 
-    print("Loading merged model for DoRA training...")
+    print("Loading merged model for LoRA (DoRA-style) training...")
     model = AutoModelForCausalLM.from_pretrained(
         MERGED_MODEL_DIR,
         torch_dtype=torch.bfloat16,
@@ -64,20 +63,34 @@ def main():
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
-    dora_config = DoRAConfig(
-        r=64,
-        alpha=128,
+    # ------------------------------
+    # LoRAConfig tuned for DoRA-like behavior
+    # ------------------------------
+    lora_config = LoraConfig(
+        r=64,  # High rank: captures richer directional info (as in DoRA)
+        lora_alpha=128,  # Similar to DoRA’s scaling magnitude
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
-        dropout=0.05,
+        lora_dropout=0.05,  # Regularization
         bias="none",
         task_type="CAUSAL_LM"
     )
 
-    model = get_peft_model(model, dora_config)
+    model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
 
-    # dataset
+    # ------------------------------
+    #  normalize LoRA weights (approximates DoRA decomposition)
+    # ------------------------------
+    with torch.no_grad():
+        for name, module in model.named_modules():
+            if hasattr(module, "lora_A") and hasattr(module, "lora_B"):
+                weight_norm = torch.norm(module.lora_A.weight, dim=1, keepdim=True)
+                module.lora_A.weight.div_(weight_norm + 1e-6)
+
+    # ------------------------------
+    # Dataset + formatting
+    # ------------------------------
     train_dataset = load_dataset(
         "csv",
         data_files={"train": "data/finetune-data-full/combined_train_data.csv"}
@@ -88,7 +101,7 @@ def main():
         return f"<|SYSTEM|>{system_prompt}<|USER|>{ex['input']}<|ASSISTANT|>{ex['gold']}"
 
     training_args = TrainingArguments(
-        output_dir=f"dora_results/epochs_{args.epochs}",
+        output_dir=f"dora_like_results/epochs_{args.epochs}",
         num_train_epochs=args.epochs,
         per_device_train_batch_size=TRAIN_BATCH_SIZE,
         gradient_accumulation_steps=GRAD_ACC_STEPS,
@@ -102,7 +115,7 @@ def main():
     trainer = SFTTrainer(
         model=model,
         train_dataset=train_dataset,
-        peft_config=dora_config,
+        peft_config=lora_config,
         args=training_args,
         formatting_func=format_sample
     )
@@ -113,3 +126,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
