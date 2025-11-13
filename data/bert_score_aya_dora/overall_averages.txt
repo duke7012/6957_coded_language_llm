@@ -1,9 +1,0 @@
-Max F1: 0.995250
-Max Precision: 0.995958
-Max Recall: 0.995700
-Mean F1: 0.920142
-Mean Precision: 0.926083
-Mean Recall: 0.914975
-Min F1: 0.778358
-Min Precision: 0.805808
-Min Recall: 0.715808

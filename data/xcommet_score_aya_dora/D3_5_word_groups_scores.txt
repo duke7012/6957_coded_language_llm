@@ -1,1 +1,0 @@
-model output score for D3_5_word_groups: 0.8819790948629379

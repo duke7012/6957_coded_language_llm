@@ -1,1 +1,0 @@
-model output score: 0.822442

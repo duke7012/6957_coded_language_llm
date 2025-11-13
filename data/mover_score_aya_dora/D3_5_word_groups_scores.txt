@@ -1,3 +1,0 @@
-Mean MoverScore for D3_5_word_groups: 0.9240
-Max MoverScore for D3_5_word_groups: 1.0000
-Min MoverScore for D3_5_word_groups: 0.7940

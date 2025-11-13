@@ -1,3 +1,0 @@
-Mean MoverScore for drop_dev_passage_5_word_groups: 0.8618
-Max MoverScore for drop_dev_passage_5_word_groups: 1.0000
-Min MoverScore for drop_dev_passage_5_word_groups: 0.5627

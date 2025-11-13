@@ -1,3 +1,0 @@
-Max MoverScore: 0.998725
-Mean MoverScore: 0.881867
-Min MoverScore: 0.650192
