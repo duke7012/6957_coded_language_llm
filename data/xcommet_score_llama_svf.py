@@ -1,58 +1,91 @@
+import numpy as np
 import os
 import re
 
-import numpy as np
-import torch
 from comet import download_model, load_from_checkpoint
 
+model_path = download_model("Unbabel/XCOMET-XL")
+model = load_from_checkpoint(model_path)
 
-def load_lines(path, strip_special=False):
-    with open(path, "r") as handle:
-        lines = [line.rstrip("\n") for line in handle.readlines()]
-    if strip_special:
-        lines = [re.sub(r"<pad>", "", line) for line in lines]
-        lines = [re.sub(r"</s>", "", line) for line in lines]
-        lines = [line.strip() for line in lines]
-    lines = [line for line in lines if line]
-    return lines
+class ScoreObj:
+    def __init__(self, score, system_score, error_span):
+        self.score = score
+        self.system_score = system_score
+        self.error_span = error_span
 
+def calc_xcommet(inputs, outputs, golds):
 
-def calc_xcomet(model, sources, translations, references):
     data = []
-    for src, mt, ref in zip(sources, translations, references):
-        data.append({"src": src, "mt": mt, "ref": ref})
-    gpus = 1 if torch.cuda.is_available() else 0
-    model_output = model.predict(data, batch_size=8, gpus=gpus)
-    return model_output
+
+    for i, o, g in zip(inputs, outputs, golds):
+        data_obj = {"src": i, "mt": o, "ref": g}
+        data.append(data_obj)
+        
+    scores = []
+    
+    model_output = model.predict(data, batch_size=8, gpus=1)
+    
+    score_obj = ScoreObj(model_output.scores, model_output.system_score, model_output.metadata.error_spans)
+    
+    scores.append(score_obj)
+    
+    return scores
 
 
-if __name__ == "__main__":
-    model_path = download_model("Unbabel/XCOMET-XL")
-    model = load_from_checkpoint(model_path)
 
+if __name__ == '__main__':
+    # need input file
     input_dir_str = "data/encoded_limited_lines_aya/"
+    input_dir = sorted(os.listdir(input_dir_str))
+    
+    # need prediction file
+    # get dir for aya
     pred_dir_str = "data/llama31_pred_partial_svf/"
-    gold_dir_str = "data/parsed/"
-
     pred_dir = sorted(os.listdir(pred_dir_str))
+    
+    # need parsed file
+    gold_dir_str = "data/parsed/"
+    gold_dir = sorted(os.listdir(gold_dir_str))
 
-    for filename in pred_dir:
-        src_lines = load_lines(os.path.join(input_dir_str, filename), strip_special=True)
-        pred_lines = load_lines(os.path.join(pred_dir_str, filename))
-        ref_lines = load_lines(os.path.join(gold_dir_str, filename))
+    output_dir = "data/xcommet_score_llama_svf/"
+    os.makedirs(output_dir, exist_ok=True)
+    
+    for pred_file in pred_dir:
+        in_file = pred_file
+        gold_file = pred_file
+        
+        with open(pred_dir_str + pred_file, 'r') as file:
+            pred_lines = file.readlines()
+            # Remove trailing newline characters from each line
+            pred_lines = [line.rstrip('\n') for line in pred_lines]
+            pred_lines = [string for string in pred_lines if string]
+            
 
-        if not (len(src_lines) == len(pred_lines) == len(ref_lines)):
-            raise ValueError(
-                f"Mismatched line counts in {filename}: "
-                f"src={len(src_lines)}, pred={len(pred_lines)}, ref={len(ref_lines)}"
-            )
-
-        model_output = calc_xcomet(model, src_lines, pred_lines, ref_lines)
-        avg_score = float(np.mean(model_output.scores))
-
-        base = os.path.splitext(filename)[0]
-        out_dir = "data/xcommet_score_llama_svf/"
-        os.makedirs(out_dir, exist_ok=True)
-        with open(os.path.join(out_dir, base + "_scores.txt"), "w") as txt_file:
-            txt_file.write(f"model output score for {base}: {avg_score}\n")
-
+        with open(input_dir_str + in_file, 'r') as file:
+            gold_lines = file.readlines()
+            # Remove trailing newline characters from each line
+            gold_lines = [line.rstrip('\n') for line in gold_lines]
+            gold_lines = [re.sub(r"<pad>", "", line) for line in gold_lines]
+            gold_lines = [re.sub(r"</s>", "", line) for line in gold_lines]
+            gold_lines = [line.strip() for line in gold_lines]
+            gold_lines = [string for string in gold_lines if string]
+        
+        with open(gold_dir_str + gold_file, 'r') as file:
+            gold_lines = file.readlines()
+        
+        scores = calc_xcommet(pred_lines, gold_lines, gold_lines)
+        
+        orig_filename = os.path.basename(gold_file)
+        orig_filename = os.path.splitext(orig_filename)[0]
+        filename = output_dir + orig_filename + "_scores.txt"
+        
+        scores_mean = np.mean(np.array(scores[0].score))
+        
+        score_txt = []
+        score_txt.append("model output score for {}: {}".format(orig_filename, scores_mean))
+        
+        with open(filename, "w") as txt_file:
+            for line in score_txt:
+                txt_file.write(line + "\n")
+        
+        print("xcommet system score average for {}: {}".format(orig_filename, scores_mean))

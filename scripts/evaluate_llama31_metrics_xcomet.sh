@@ -4,7 +4,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --nodes=1
 #SBATCH --gres=gpu:0
-#SBATCH --time=6:00:00
+#SBATCH --time=12:00:00
 #SBATCH --mem=32GB
 #SBATCH --mail-user=u1445624@utah.edu
 #SBATCH --mail-type=FAIL,END
@@ -35,7 +35,7 @@ echo "=========================================="
 echo "Running metrics"
 echo "=========================================="
 
-python data/xcommet_score_llama_svf.py
+python data/xcommet_score_llama_dora.py
 
 echo ""
 echo "=========================================="

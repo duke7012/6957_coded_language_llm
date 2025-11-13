@@ -1,0 +1,1 @@
+model output score for drop_dev_passage_5_word_groups: 0.9112397975921631

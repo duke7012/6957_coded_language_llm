@@ -1,0 +1,9 @@
+Mean Precision for D2_10_word_groups: 0.9722
+Max Precision for D2_10_word_groups: 1.0000
+Min Precision for D2_10_word_groups: 0.7879
+Mean Recall for D2_10_word_groups: 0.9692
+Max Recall for D2_10_word_groups: 1.0000
+Min Recall for D2_10_word_groups: 0.7045
+Mean F1 for D2_10_word_groups: 0.9705
+Max F1 for D2_10_word_groups: 1.0000
+Min F1 for D2_10_word_groups: 0.7947
