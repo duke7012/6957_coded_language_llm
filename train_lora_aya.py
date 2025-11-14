@@ -1,11 +1,10 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig, TrainingArguments
-from peft import LoraConfig, get_peft_model
-from datasets import load_dataset
+from peft import LoraConfig
 import torch
+from datasets import load_dataset
 from trl import SFTTrainer
 import argparse
 import os
-
 
 USE_GPU = True
 if USE_GPU:
@@ -26,16 +25,15 @@ else:
 # equivalent A100 setting
 QUANTIZE_4BIT = True
 USE_GRAD_CHECKPOINTING = True
-TRAIN_BATCH_SIZE = 16
+TRAIN_BATCH_SIZE = 1
 TRAIN_MAX_SEQ_LENGTH = 512
 USE_FLASH_ATTENTION = False
-GRAD_ACC_STEPS = 2
+GRAD_ACC_STEPS = 4
 
 MODEL_NAME = "CohereForAI/aya-expanse-8b"
 
-
 def main():
-    parser = argparse.ArgumentParser(description="Train a DoRA model for translation.")
+    parser = argparse.ArgumentParser(description="Train a LoRA model for translation.")
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs to train")
     args = parser.parse_args()
     # Load Model
@@ -60,12 +58,8 @@ def main():
             )
     model = model.to(device)
 
-
-    # Load tokenizer and model
+    # Load tokenizer
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-    tokenizer.pad_token = tokenizer.eos_token
-    tokenizer.padding_side = "right"
-
 
     def get_message_format(prompts, system_prompt):
         messages = []
@@ -108,6 +102,7 @@ def main():
                 max_new_tokens=max_new_tokens,
                 do_sample=True,
             )
+
         # get only generated tokens
         gen_tokens = [
             gt[prompt_padded_len:] for gt in gen_tokens
@@ -118,7 +113,7 @@ def main():
     
     train_dataset = load_dataset(
     "csv",
-    data_files={"train": "data/finetune-data-full/combined_train_data.csv"}
+    data_files={"train": r"data\finetune-data-full\combined_train_data.csv"}
 )
 
     train_dataset = train_dataset["train"]
@@ -130,7 +125,7 @@ def main():
         return text
     
     training_arguments = TrainingArguments(
-        output_dir="doro_results_aya8b_translator/4d_results_" + str(args.epochs) + "/",
+        output_dir="results_aya8b_translator/results_" + str(args.epochs) + "/",
         num_train_epochs=args.epochs,
         per_device_train_batch_size=TRAIN_BATCH_SIZE,
         gradient_accumulation_steps=GRAD_ACC_STEPS,
@@ -148,37 +143,33 @@ def main():
         report_to="none"
     )
 
-    dora_config = LoraConfig(
-        r=8,
-        lora_alpha=16,
-        target_modules=["q_proj", "v_proj"],
-        lora_dropout=0.05,
+    peft_config = LoraConfig(
+        lora_alpha=32,
+        r=32,
         bias="none",
         task_type="CAUSAL_LM",
-        use_dora=True 
+        target_modules=["q_proj", "v_proj", "k_proj", "o_proj"]
     )
-
-    model = get_peft_model(model, dora_config)
-    model.print_trainable_parameters()
 
     trainer = SFTTrainer(
         model=model,
         train_dataset=train_dataset,
-        peft_config=dora_config,
+        peft_config=peft_config,
         args=training_arguments,
         formatting_func=formatting_prompts_func
     )
 
+    torch.cuda.empty_cache()
     # Train the model
     trainer.train()
 
+    output_dir = os.getcwd() + "/loro_results_aya8b_translator/4d_results" + str(args.epochs) + "/"
 
-    output_dir = training_arguments.output_dir
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
     # Save both adapter and base model safely
-    output_dir = os.path.join(os.getcwd(), f"doro_results_aya8b_translator/4d_results{args.epochs}")
+    output_dir = os.path.join(os.getcwd(), f"loro_results_aya8b_translator/4d_results{args.epochs}")
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -193,6 +184,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
