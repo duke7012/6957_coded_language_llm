@@ -2,7 +2,7 @@
 
 # Run Llama 3.1 finetuning scripts on a specified GPU.
 # Usage:
-#   ./scripts/run_llama31_training.sh [svf|dora] [epochs] [gpu_id]
+#   ./scripts/run_llama31_training.sh [svf|dora|lora] [epochs] [gpu_id]
 #   ./scripts/run_llama31_training.sh svf 5 0
 
 set -euo pipefail
@@ -13,9 +13,11 @@ PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 TRAIN_TYPE="${1:-dora}"
 EPOCHS="${2:-3}"
 GPU_ID="${3:-0}"
+ADAPTER_PATH="${ADAPTER_PATH:-}"
+RESUME_FROM="${RESUME_FROM_CHECKPOINT:-}"
 
-if [[ "${TRAIN_TYPE}" != "svf" && "${TRAIN_TYPE}" != "dora" ]]; then
-  echo "First argument must be 'svf' or 'dora'."
+if [[ "${TRAIN_TYPE}" != "svf" && "${TRAIN_TYPE}" != "dora" && "${TRAIN_TYPE}" != "lora" ]]; then
+  echo "First argument must be 'svf', 'dora', or 'lora'."
   exit 1
 fi
 
@@ -30,4 +32,14 @@ export CUDA_VISIBLE_DEVICES="${GPU_ID}"
 
 cd "${PROJECT_ROOT}"
 
-python "${PYTHON_SCRIPT}" --epochs "${EPOCHS}"
+CMD=(python "${PYTHON_SCRIPT}" --epochs "${EPOCHS}")
+
+if [[ -n "${ADAPTER_PATH}" ]]; then
+  CMD+=(--adapter-path "${ADAPTER_PATH}")
+fi
+
+if [[ -n "${RESUME_FROM}" ]]; then
+  CMD+=(--resume-from-checkpoint "${RESUME_FROM}")
+fi
+
+"${CMD[@]}"

@@ -1,0 +1,3 @@
+Mean MoverScore for drop_dev_questions_10_word_groups: 0.5166
+Max MoverScore for drop_dev_questions_10_word_groups: 0.8447
+Min MoverScore for drop_dev_questions_10_word_groups: 0.2771
