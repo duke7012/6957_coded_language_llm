@@ -36,7 +36,7 @@ model.save_pretrained(MERGED_MODEL_DIR)
 tokenizer.save_pretrained(MERGED_MODEL_DIR)
 
 
-################ STEP 2: DORA-LIKE TRAINING ################
+################ STEP 2: SVF TRAINING ################
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--epochs", type=int, default=3)
@@ -51,7 +51,7 @@ def main():
             bnb_4bit_use_double_quant=True
         )
 
-    print("Loading merged model for LoRA (DoRA-style) training...")
+    print("Loading merged model for SVF training...")
     model = AutoModelForCausalLM.from_pretrained(
         MERGED_MODEL_DIR,
         torch_dtype=torch.bfloat16,
@@ -63,15 +63,17 @@ def main():
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
-    # ------------------------------
-    # LoRAConfig tuned for DoRA-like behavior
-    # ------------------------------
+    # --------------------------------------------------------
+    # Create LoRA adapters again — these are what SVF modifies
+    # --------------------------------------------------------
+    svf_rank = 64
+
     lora_config = LoraConfig(
-        r=64,  # High rank: captures richer directional info (as in DoRA)
-        lora_alpha=128,  # Similar to DoRA’s scaling magnitude
+        r=svf_rank,
+        lora_alpha=svf_rank * 2,
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
-        lora_dropout=0.05,  # Regularization
+        lora_dropout=0.05,
         bias="none",
         task_type="CAUSAL_LM"
     )
@@ -79,27 +81,43 @@ def main():
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
 
-    # ------------------------------
-    #  normalize LoRA weights (approximates DoRA decomposition)
-    # ------------------------------
-    with torch.no_grad():
-        for name, module in model.named_modules():
-            if hasattr(module, "lora_A") and hasattr(module, "lora_B"):
+    # --------------------------------------------------------
+    # Add SVF scalar parameters per-LoRA-direction
+    # --------------------------------------------------------
+    print("Injecting SVF parameters...")
+    for name, module in model.named_modules():
+        if hasattr(module, "lora_A") and hasattr(module, "lora_B"):
 
-                # Grab first LoRA matrices inside the ModuleDict
-                A = next(iter(module.lora_A.values()))
-                B = next(iter(module.lora_B.values()))
+            # A and B are in ModuleDict, extract the single layer
+            A = next(iter(module.lora_A.values()))
+            B = next(iter(module.lora_B.values()))
 
-                # Compute weight norms for DoRA
-                weight_norm = torch.norm(A.weight, dim=1, keepdim=True)
-                module.dora_scaling = torch.nn.Parameter(weight_norm)
+            # SVF scaling vector: one scalar per rank direction
+            svf_scale = torch.nn.Parameter(torch.ones(A.weight.size(0)))
+            module.svf_scale = svf_scale
 
-                # Normalize A
-                A.weight = torch.nn.Parameter(A.weight / weight_norm)
+            # Wrap A/B forward to include svf_scale
+            original_forward = module.forward
 
-    # ------------------------------
-    # Dataset + formatting
-    # ------------------------------
+            def svf_forward(m, x, orig_fwd=original_forward):
+                # Apply original forward
+                out = orig_fwd(x)
+
+                # LoRA output = (B @ A) * scale
+                A = next(iter(m.lora_A.values()))
+                B = next(iter(m.lora_B.values()))
+                scale = m.svf_scale.view(-1, 1)  # (r, 1)
+
+                lora_update = (B.weight @ (A.weight * scale)).to(out.dtype)
+                out = out + x @ lora_update.T
+
+                return out
+
+            module.forward = svf_forward.__get__(module, module.__class__)
+
+    # --------------------------------------------------------
+    # Dataset
+    # --------------------------------------------------------
     train_dataset = load_dataset(
         "csv",
         data_files={"train": "data/finetune-data-full/combined_train_data.csv"}
@@ -109,8 +127,11 @@ def main():
         system_prompt = "You are a translator..."
         return f"<|SYSTEM|>{system_prompt}<|USER|>{ex['input']}<|ASSISTANT|>{ex['gold']}"
 
+    # --------------------------------------------------------
+    # Training args
+    # --------------------------------------------------------
     training_args = TrainingArguments(
-        output_dir=f"dora_like_results/epochs_{args.epochs}",
+        output_dir=f"svf_results/epochs_{args.epochs}",
         num_train_epochs=args.epochs,
         per_device_train_batch_size=TRAIN_BATCH_SIZE,
         gradient_accumulation_steps=GRAD_ACC_STEPS,
@@ -135,4 +156,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
