@@ -27,7 +27,7 @@ wheels/
 # PyTorch
 *.pt
 *.pth
-*.bin
+#*.bin
 *.ckpt
 
 # Training outputs
