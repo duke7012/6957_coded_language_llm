@@ -1,76 +1,73 @@
 import argparse
-import os
 import torch
-from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments, BitsAndBytesConfig
-from peft import PeftModel, LoraConfig, get_peft_model
+from transformers import AutoModelForCausalLM, AutoTokenizer, TrainingArguments
+from peft import LoraConfig, get_peft_model
 from datasets import load_dataset
 from trl import SFTTrainer
+import torch.nn as nn
 
-################ CONFIG ################
+############ CONFIG ############
 MODEL_BASE = "CohereForAI/aya-expanse-8b"
-LORA_CHECKPOINT = "results_aya8b_translator/results_10/checkpoint-19970"
-MERGED_MODEL_DIR = "merged_lora_model"
+MERGED_MODEL = "merged_lora_model"
 
-USE_4BIT = True
+# 4-bit DISABLED because bitsandbytes cannot run on Windows
+USE_4BIT = False
+
 TRAIN_BATCH_SIZE = 16
 GRAD_ACC_STEPS = 2
 USE_GRAD_CHECKPOINTING = True
 
 
-################ STEP 1: MERGE LORA ################
-print("Loading base model + LoRA...")
-model = AutoModelForCausalLM.from_pretrained(
-    MODEL_BASE,
-    torch_dtype=torch.bfloat16,
-    device_map="auto"
-)
+############ SVF - WRAPPER ############
+class SVFLinear(nn.Module):
+    """Wraps PEFT LoRA linear layers with SVF scaling."""
+    def __init__(self, linear, lora_A, lora_B):
+        super().__init__()
+        self.linear = linear
+        self.lora_A = lora_A
+        self.lora_B = lora_B
 
-model = PeftModel.from_pretrained(model, LORA_CHECKPOINT)
-tokenizer = AutoTokenizer.from_pretrained(MODEL_BASE)
+        # One scalar per-rank direction
+        self.svf_scale = nn.Parameter(torch.ones(lora_A.weight.size(0)))
 
-print("Merging LoRA weights...")
-model = model.merge_and_unload()
+    def forward(self, x):
+        out = self.linear(x)
 
-print("Saving merged model...")
-model.save_pretrained(MERGED_MODEL_DIR)
-tokenizer.save_pretrained(MERGED_MODEL_DIR)
+        A = self.lora_A.weight           # (r, in)
+        B = self.lora_B.weight           # (out, r)
+
+        # Apply SVF per-rank scaling to A
+        A_scaled = A * self.svf_scale[:, None]
+
+        # LoRA update
+        lora_update = x @ A_scaled.T @ B.T
+
+        return out + lora_update
 
 
-################ STEP 2: SVF TRAINING ################
+############ TRAINING ############
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--epochs", type=int, default=3)
     args = parser.parse_args()
 
-    quant_cfg = None
-    if USE_4BIT:
-        quant_cfg = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_compute_dtype=torch.bfloat16,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_use_double_quant=True
-        )
+    print("Loading merged model (bf16, no quantization)...")
 
-    print("Loading merged model for SVF training...")
     model = AutoModelForCausalLM.from_pretrained(
-        MERGED_MODEL_DIR,
-        torch_dtype=torch.bfloat16,
-        quantization_config=quant_cfg,
-        device_map="auto"
+        MERGED_MODEL,
+        torch_dtype=torch.bfloat16,   # Runs on GPU fine
+        device_map="auto"             # Automatically places layers on GPU
     )
 
-    tokenizer = AutoTokenizer.from_pretrained(MERGED_MODEL_DIR)
+    tokenizer = AutoTokenizer.from_pretrained(MERGED_MODEL)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = "right"
 
-    # --------------------------------------------------------
-    # Create LoRA adapters again — these are what SVF modifies
-    # --------------------------------------------------------
-    svf_rank = 64
-
+    #### Install new LoRA adapters (SVF modifies these)
+    rank = 64
     lora_config = LoraConfig(
-        r=svf_rank,
-        lora_alpha=svf_rank * 2,
+        r=rank,
+        lora_alpha=rank * 2,
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                         "gate_proj", "up_proj", "down_proj"],
         lora_dropout=0.05,
@@ -81,43 +78,22 @@ def main():
     model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
 
-    # --------------------------------------------------------
-    # Add SVF scalar parameters per-LoRA-direction
-    # --------------------------------------------------------
-    print("Injecting SVF parameters...")
+    #### Apply SVF replacing LoRA Linear layers
+    print("Injecting SVF...")
     for name, module in model.named_modules():
         if hasattr(module, "lora_A") and hasattr(module, "lora_B"):
 
-            # A and B are in ModuleDict, extract the single layer
+            # Extract LoRA matrices
             A = next(iter(module.lora_A.values()))
             B = next(iter(module.lora_B.values()))
 
-            # SVF scaling vector: one scalar per rank direction
-            svf_scale = torch.nn.Parameter(torch.ones(A.weight.size(0)))
-            module.svf_scale = svf_scale
+            # Replace only the linear base layer
+            if hasattr(module, "base_layer"):
+                linear = module.base_layer
+                wrapped = SVFLinear(linear, A, B)
+                module.base_layer = wrapped
 
-            # Wrap A/B forward to include svf_scale
-            original_forward = module.forward
-
-            def svf_forward(m, x, orig_fwd=original_forward):
-                # Apply original forward
-                out = orig_fwd(x)
-
-                # LoRA output = (B @ A) * scale
-                A = next(iter(m.lora_A.values()))
-                B = next(iter(m.lora_B.values()))
-                scale = m.svf_scale.view(-1, 1)  # (r, 1)
-
-                lora_update = (B.weight @ (A.weight * scale)).to(out.dtype)
-                out = out + x @ lora_update.T
-
-                return out
-
-            module.forward = svf_forward.__get__(module, module.__class__)
-
-    # --------------------------------------------------------
-    # Dataset
-    # --------------------------------------------------------
+    #### Dataset
     train_dataset = load_dataset(
         "csv",
         data_files={"train": "data/finetune-data-full/combined_train_data.csv"}
@@ -127,9 +103,7 @@ def main():
         system_prompt = "You are a translator..."
         return f"<|SYSTEM|>{system_prompt}<|USER|>{ex['input']}<|ASSISTANT|>{ex['gold']}"
 
-    # --------------------------------------------------------
-    # Training args
-    # --------------------------------------------------------
+    #### Training args
     training_args = TrainingArguments(
         output_dir=f"svf_results/epochs_{args.epochs}",
         num_train_epochs=args.epochs,
@@ -151,8 +125,11 @@ def main():
     )
 
     trainer.train()
+
     trainer.model.save_pretrained(training_args.output_dir)
 
 
 if __name__ == "__main__":
     main()
+
+
