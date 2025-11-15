@@ -70,4 +70,4 @@ tmp/
 temp/
 
 translation_checkpoints/
-*.safetensors
+#*.safetensors
