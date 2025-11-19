@@ -28,21 +28,9 @@ MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Train or continue training a LoRA adapter on Llama 3.1 for translation."
+        description="Train a LoRA adapter on Llama 3.1 for translation."
     )
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs to train")
-    parser.add_argument(
-        "--adapter-path",
-        type=str,
-        default=None,
-        help="Existing LoRA adapter directory to resume from.",
-    )
-    parser.add_argument(
-        "--resume-from-checkpoint",
-        type=str,
-        default=None,
-        help="Trainer checkpoint directory for resuming optimizer state.",
-    )
     args = parser.parse_args()
 
     quantization_config = None
@@ -118,37 +106,26 @@ def main():
         task_type="CAUSAL_LM",
     )
 
-    adapter_path = args.adapter_path
-    adapter_loaded = False
-    if adapter_path and os.path.isdir(adapter_path):
-        model = PeftModel.from_pretrained(model, adapter_path)
-        adapter_loaded = True
-        print(f"Loaded existing LoRA adapter from {adapter_path}")
+    if isinstance(model, PeftModel):
+        base_model = model.get_base_model()
+        if hasattr(base_model, "peft_config"):
+            delattr(base_model, "peft_config")
+        model = base_model.to(device)
 
-    if not adapter_loaded:
-        if isinstance(model, PeftModel):
-            base_model = model.get_base_model()
-            if hasattr(base_model, "peft_config"):
-                delattr(base_model, "peft_config")
-            model = base_model.to(device)
-        model = get_peft_model(model, lora_config)
-
+    model = get_peft_model(model, lora_config)
     model.print_trainable_parameters()
 
     trainer = SFTTrainer(
         model=model,
         train_dataset=train_dataset,
-        peft_config=None if adapter_loaded else lora_config,
+        peft_config=lora_config,
         args=training_arguments,
         formatting_func=formatting_prompts_func,
     )
 
-    if args.resume_from_checkpoint:
-        trainer.train(resume_from_checkpoint=args.resume_from_checkpoint)
-    else:
-        trainer.train()
+    trainer.train()
 
-    output_dir = adapter_path or training_arguments.output_dir
+    output_dir = training_arguments.output_dir
     os.makedirs(output_dir, exist_ok=True)
     trainer.model.save_pretrained(save_directory=output_dir)
     model.config.use_cache = True

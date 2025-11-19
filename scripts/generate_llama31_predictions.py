@@ -19,8 +19,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 DEFAULT_SYSTEM_PROMPT = (
-    "You are a translator that converts encoded or foreign text into plain English. "
-    "When given input text, translate it accurately to English."
+    "You are a translation engine. Given input text, reply with ONLY the natural "
+    "English translation as a single concise sentence. Do not explain, describe "
+    "your process, mention decoding, or add any extra commentary. "
 )
 
 
@@ -57,6 +58,205 @@ def read_inputs(path: Path) -> List[str]:
 
 def ensure_output_dir(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+
+
+def extract_translation(generated_text: str) -> str:
+    """Extract the actual translation from verbose model output."""
+    import re
+    
+    # Split into lines and filter out empty lines
+    lines = [line.strip() for line in generated_text.split('\n') if line.strip()]
+    
+    # Patterns that indicate explanations (very comprehensive)
+    explanation_patterns = [
+        r'^it (appears|seems|looks)',
+        r'^the (text|encoded|decoded|translation)',
+        r'^(decoded|decoding|encoded|encoding)',
+        r'^to translate',
+        r'^here\'s',
+        r'^so the',
+        r'^this text',
+        r'^using base64',
+        r'^now, let\'s',
+        r'^i\'ll',
+        r'^if you\'d like',
+        r'^i\'m (not|happy|able|sure)',
+        r'^i think',
+        r'^the translation of',
+        r'^base64 (encoded|decoding)',
+        r'^the (base64|url)',
+        r'^after (decoding|analyzing)',
+        r'^decoded (string|text|bytes)',
+        r'^the encoded',
+        r'^it looks like',
+        r'^could you please',
+        r'^however,',
+        r'^first,',
+        r'^let me',
+        r'^string:',
+        r'^text is:',
+        r'^text:',
+        r'^is encoded',
+        r'^is:',
+        r'^appears to be',
+        r'^seems to be',
+        r'^is likely',
+        r'^is decoded',
+        r'^yields:',
+        r'^results in:',
+        r'^translates to:',
+        r'^decoded to:',
+        r'^message is:',
+        r'^version:',
+    ]
+    
+    # Base64-like pattern (long alphanumeric strings with = at end)
+    base64_pattern = r'[A-Za-z0-9+/]{20,}={0,2}'
+    
+    def is_explanation_line(line: str) -> bool:
+        """Check if a line is an explanation."""
+        line_lower = line.lower()
+        # Check explanation patterns
+        if any(re.match(pat, line_lower) for pat in explanation_patterns):
+            return True
+        # Check for explanation keywords
+        explanation_keywords = [
+            'decoded', 'encoded', 'base64', 'translation', 'translate',
+            'decoding', 'encoding', 'appears', 'seems', 'looks like',
+            'i\'m', 'i think', 'could you', 'let me', 'here\'s'
+        ]
+        if any(keyword in line_lower for keyword in explanation_keywords):
+            # But allow if it's a very short, simple line that might be actual translation
+            if len(line.split()) <= 8 and not re.search(base64_pattern, line):
+                return False
+            return True
+        return False
+    
+    def clean_line(line: str) -> str:
+        """Clean a line by removing encoded strings and metadata."""
+        # Remove base64-like encoded strings
+        line = re.sub(base64_pattern, '', line)
+        # Remove common prefixes
+        line = re.sub(r'^(decoded|translation|text|string|result|output|message|is|text is|text:)[:\s]+', '', line, flags=re.IGNORECASE)
+        # Remove quotes/backticks
+        line = re.sub(r'^["\'`]+|["\'`]+$', '', line)
+        # Remove URLs
+        line = re.sub(r'https?://\S+', '', line)
+        # Clean up multiple spaces
+        line = re.sub(r'\s+', ' ', line)
+        return line.strip()
+    
+    def looks_like_translation(line: str) -> bool:
+        """Check if a line looks like an actual translation."""
+        cleaned = clean_line(line)
+        if len(cleaned) < 3:
+            return False
+        # Should have mostly letters and spaces (not too many special chars)
+        alpha_ratio = len(re.findall(r'[a-zA-Z]', cleaned)) / max(len(cleaned), 1)
+        if alpha_ratio < 0.6:
+            return False
+        # Should not be mostly numbers or special chars
+        if re.match(r'^[\d\s=+/]+$', cleaned):
+            return False
+        # Should not contain base64 patterns
+        if re.search(base64_pattern, cleaned):
+            return False
+        return True
+    
+    # First pass: look for lines after colons that might be translations
+    for i, line in enumerate(lines):
+        # Look for patterns like "text: <translation>" or "decoded: <translation>"
+        colon_match = re.search(r'[:\s]+(.+)$', line)
+        if colon_match:
+            candidate = colon_match.group(1).strip()
+            candidate = clean_line(candidate)
+            if looks_like_translation(candidate) and not is_explanation_line(candidate):
+                return candidate
+    
+    # Second pass: find lines that look like translations
+    candidates = []
+    for line in lines:
+        if is_explanation_line(line):
+            continue
+        
+        cleaned = clean_line(line)
+        if looks_like_translation(cleaned):
+            # Prefer shorter, cleaner lines (actual translations are usually concise)
+            # But also consider length to avoid picking up fragments
+            score = len(cleaned) if 10 <= len(cleaned) <= 200 else 0
+            if score > 0:
+                candidates.append((score, cleaned))
+    
+    # Return the best candidate (prefer medium-length, clean translations)
+    if candidates:
+        # Sort by score (length), prefer medium-length translations
+        candidates.sort(reverse=True, key=lambda x: x[0])
+        return candidates[0][1]
+    
+    # Third pass: try to extract from any line, even if it has some explanation
+    for line in lines:
+        cleaned = clean_line(line)
+        # Remove explanation prefixes more aggressively
+        cleaned = re.sub(r'^(it|the|this|that|here|so|now|first|after|before|when|where|which|who|what|how|why|if|but|and|or|however|therefore|thus|hence|moreover|furthermore|additionally|also|too|as well|in addition|for example|for instance|specifically|namely|that is|i\.e\.|e\.g\.)[,\s]+', '', cleaned, flags=re.IGNORECASE)
+        cleaned = cleaned.strip()
+        if looks_like_translation(cleaned) and len(cleaned) >= 5:
+            return cleaned
+    
+    # Final fallback: return first line, heavily cleaned
+    if lines:
+        fallback = clean_line(lines[0])
+        # Remove any remaining explanation patterns
+        fallback = re.sub(r'^(decoded|translation|text|string|result|output|message|is|text is|text:)[:\s]+', '', fallback, flags=re.IGNORECASE)
+        fallback = re.sub(base64_pattern, '', fallback)
+        fallback = re.sub(r'\s+', ' ', fallback).strip()
+        return fallback if fallback else generated_text.strip()
+    
+    return generated_text.strip()
+
+
+def enforce_single_sentence(text: str) -> str:
+    """Force the translation to a single concise sentence."""
+    import re
+
+    if not text:
+        return text
+
+    # Normalize whitespace
+    normalized = re.sub(r"\s+", " ", text).strip()
+    if not normalized:
+        return normalized
+
+    # Remove common explanation prefixes
+    prefixes = [
+        "it appears that",
+        "it seems that",
+        "the text",
+        "decoded text is",
+        "translation:",
+        "decoded:",
+        "result:",
+        "message:",
+    ]
+    lowered = normalized.lower()
+    for prefix in prefixes:
+        if lowered.startswith(prefix):
+            normalized = normalized[len(prefix) :].lstrip()
+            lowered = normalized.lower()
+            break
+
+    # Take the first sentence-ending punctuation if present
+    sentence_match = re.search(r"(.+?[.!?])(\s|$)", normalized)
+    if sentence_match:
+        candidate = sentence_match.group(1).strip()
+    else:
+        # Otherwise fall back to the first line / chunk
+        candidate = normalized.split(".", 1)[0].split("!", 1)[0].split("?", 1)[0].strip()
+        if not candidate:
+            candidate = normalized
+
+    # Final cleanup
+    candidate = re.sub(r"\s+", " ", candidate).strip()
+    return candidate
 
 
 def generate_translation(
@@ -98,7 +298,11 @@ def generate_translation(
 
     generated_ids = output_ids[0, prompt_len:]
     generated_text = tokenizer.decode(generated_ids, skip_special_tokens=True)
-    return generated_text.strip()
+    
+    # Extract clean translation from potentially verbose output
+    clean_translation = extract_translation(generated_text)
+    clean_translation = enforce_single_sentence(clean_translation)
+    return clean_translation
 
 
 def iterate_input_files(input_dir: Path, only_files: Iterable[str] | None) -> List[Path]:
@@ -158,7 +362,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--temperature",
         type=float,
-        default=0.7,
+        default=0.0,
         help="Sampling temperature; set to 0 for greedy decoding.",
     )
     parser.add_argument(

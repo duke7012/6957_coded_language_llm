@@ -25,7 +25,7 @@ module load miniforge3/24.9.0
 module load cuda/12.4.0
 
 echo "Activating conda environment..."
-source /uufs/chpc.utah.edu/sys/installdir/miniforge3/24.9.0/etc/profile.d/conda.sh
+source /uufs/chpc.utah.edu/sys/installdir/r8/miniforge3/24.9.0/etc/profile.d/conda.sh
 conda activate py311
 
 echo "Setting up HuggingFace cache..."

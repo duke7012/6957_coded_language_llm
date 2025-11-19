@@ -28,6 +28,7 @@ conda activate py311
 echo "Running MoverScore evaluations"
 #python data/mover_score_llama_dora.py
 #python data/mover_score_llama_svf.py
-python data/mover_score_llama_lora.py
+#python data/mover_score_llama_lora.py
+python data/mover_score_llama_loradora.py
 
 echo "MoverScore evaluation completed at: $(date)"

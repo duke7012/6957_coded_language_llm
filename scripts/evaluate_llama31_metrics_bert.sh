@@ -35,8 +35,9 @@ echo "=========================================="
 echo "Running metrics"
 echo "=========================================="
 
-python data/bert_score_llama_dora.py
-python data/bert_score_llama_svf.py
+#python data/bert_score_llama_dora.py
+#python data/bert_score_llama_svf.py
+python data/bert_score_llama_loradora.py
 
 echo ""
 echo "=========================================="

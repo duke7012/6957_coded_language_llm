@@ -35,7 +35,8 @@ echo "=========================================="
 echo "Running metrics"
 echo "=========================================="
 
-python data/xcommet_score_llama_dora.py
+#python data/xcommet_score_llama_dora.py
+python data/xcommet_score_llama_loradora.py
 
 echo ""
 echo "=========================================="

@@ -3,7 +3,7 @@ import os
 
 import torch
 from datasets import load_dataset
-from peft import LoraConfig, get_peft_model
+from peft import LoraConfig, PeftModel, get_peft_model
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -27,11 +27,30 @@ GRAD_ACC_STEPS = 2
 MODEL_NAME = "meta-llama/Llama-3.1-8B-Instruct"
 
 
+def load_adapter_as_base(model, adapter_path):
+    peft_model = PeftModel.from_pretrained(model, adapter_path)
+    merged = peft_model.merge_and_unload()
+    merged.config.use_cache = False
+    return merged.to(device)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Train a DoRA-style adapter on Llama 3.1 for translation."
     )
     parser.add_argument("--epochs", type=int, default=10, help="Number of epochs to train")
+    parser.add_argument(
+        "--base_adapter_path",
+        type=str,
+        default=None,
+        help="Optional path to a LoRA adapter to merge before applying DoRA.",
+    )
+    parser.add_argument(
+        "--output_dir_root",
+        type=str,
+        default=None,
+        help="Optional override for the results root directory.",
+    )
     args = parser.parse_args()
 
     # --- Load model ---
@@ -52,6 +71,12 @@ def main():
         attn_implementation=attn_implementation,
         torch_dtype=torch.bfloat16,
     ).to(device)
+
+    if args.base_adapter_path:
+        if not os.path.isdir(args.base_adapter_path):
+            raise FileNotFoundError(f"Base adapter path not found: {args.base_adapter_path}")
+        print(f"Merging base adapter from {args.base_adapter_path} before applying DoRA.")
+        model = load_adapter_as_base(model, args.base_adapter_path)
 
     # --- Load tokenizer ---
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
@@ -81,9 +106,16 @@ def main():
         prompt = tokenizer.apply_chat_template(messages, tokenize=False)
         return prompt + example["gold"] + tokenizer.eos_token
 
+    if args.output_dir_root:
+        output_root = args.output_dir_root
+    elif args.base_adapter_path:
+        output_root = "lora_dora_results_llama31_8b"
+    else:
+        output_root = "dora_results_llama31_8b"
+
     # --- Training arguments ---
     training_arguments = TrainingArguments(
-        output_dir=f"dora_results_llama31_8b/epochs_{args.epochs}/",
+        output_dir=f"{output_root}/epochs_{args.epochs}/",
         num_train_epochs=args.epochs,
         per_device_train_batch_size=TRAIN_BATCH_SIZE,
         gradient_accumulation_steps=GRAD_ACC_STEPS,
